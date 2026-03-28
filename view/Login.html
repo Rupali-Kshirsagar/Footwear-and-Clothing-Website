@@ -122,7 +122,7 @@ body{
 
 // ✅ AUTO REDIRECT IF ALREADY LOGGED IN
 if(localStorage.getItem("userEmail")){
-  window.location.href = "Homepage.html";
+  window.location.href = "index.html";
 }
 
 // ✅ LOGIN FUNCTION
@@ -152,7 +152,7 @@ console.log(result);   // 👈 ADD THIS LINE
 
       alert("Login successful ✅");
 
-      window.location.href = "Homepage.html";
+      window.location.href = "index.html";
 
     } else {
       alert(result.error);
@@ -167,7 +167,7 @@ console.log(result);   // 👈 ADD THIS LINE
 function logout(){
   localStorage.removeItem("userEmail");
   localStorage.removeItem("username");
-  window.location.href="Homepage.html";
+  window.location.href="index.html";
 }
 
 </script>
