@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Men's Pants</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+body{
+  background:#f6f6f6;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+  url("image/F1 back.jpg") center/cover no-repeat;
+  color:#fff;
+  padding:100px 30px;
+  text-align:center;
+}
+header h1{
+  font-family:'Monotype Corsiva';
+  font-size:48px;
+}
+
+/* PRODUCTS */
+.products{
+  max-width:1300px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:20px;
+}
+
+.product-card{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+  text-align:center;
+  transition:.3s;
+}
+
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+  cursor:pointer;
+}
+
+.product-card h3{
+  margin:10px 0;
+}
+
+.price{
+  color:#e91e63;
+  font-size:18px;
+  font-weight:bold;
+  margin:8px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Men's Pants</h1>
+</header>
+
+<div class="products">
+
+  
+  <div class="product-card">
+    <img src="image/pant.avif"
+      onclick="openProduct(
+        'Jeans Pant',
+        'Men Denim Stylish Casual /Jeans Pant (Grey)',
+        '978.99',
+        'clothing',
+        'image/pant.avif'
+      )">
+    <h3>Jeans Pant</h3>
+    <p>Men Denim Stylish Casual /Jeans Pant (Grey)</p>
+    <div class="price">Rs 978.99</div>
+  </div>
+
+  <!-- PANT 2 -->
+  <div class="product-card">
+    <img src="image/pant2.avif"
+       onclick="openProduct(
+        'Cotton Casual Pant',
+        'BLACK PLAIN JEANS',
+        '899.99',
+        'clothing',
+        'image/pant2.avif'
+      )">
+    <h3>Cotton Casual Pant</h3>
+    <p>BLACK PLAIN JEANS</p>
+    <div class="price">Rs 899.99</div>
+  </div>
+
+  <!-- PANT 3 -->
+  <div class="product-card">
+    <img src="image\pant3.webp"
+       onclick="openProduct(
+        'Men Slim Fit Mid Rise Jeans',
+        'The Indian Garage Co Men Slim Fit Mid Rise Jeans',
+        '720.67',
+        'clothing',
+        'image/pant3.webp'
+      )">
+    <h3>Men Slim Fit Mid Rise Jeans</h3>
+    <p>The Indian Garage Co Men Slim Fit Mid Rise Jeans</p>
+    <div class="price">Rs 720.67</div>
+  </div>
+
+  <!-- PANT 4 -->
+  <div class="product-card">
+    <img src="image/pant4.jpg"
+         onclick="openProduct(
+        'Cotton Cargo Pant',
+        'Lymio Cargo for Men || Cotton Cargo Pant || Drawstring Waist Pant',
+        '749.91',
+        'clothing',
+        'image/pant4.jpg'
+      )">
+    <h3>Cotton Cargo Pant</h3>
+    <p>Lymio Cargo for Men || Cotton Cargo Pant || Drawstring Waist Pant</p>
+    <div class="price">Rs 749.91</div>
+  </div>
+
+  <!-- PANT 5 -->
+  <div class="product-card">
+    <img src="image/pant5.avif"
+       onclick="openProduct(
+        'sport wear trackpants',
+        'Men polyester lycra sport wear trackpants for men',
+        '268.99',
+        'clothing',
+        'image/pant5.avif'
+      )">
+    <h3>sport wear trackpants</h3>
+    <p>Men polyester lycra sport wear trackpants for men</p>
+    <div class="price">Rs 268.99</div>
+  </div>
+
+   <div class="product-card">
+    <img src="image/pant8.avif"
+       onclick="openProduct(
+        'Gym Casual Wear',
+        'EXPERT Mens Stylish Jogger Lower Track Pants for Gym Casual Wear for Men(Pack Of 2)',
+        '400.90',
+        'clothing',
+        'image/pant8.avif'
+      )">
+    <h3>Gym Casual Wear</h3>
+    <p>EXPERT Men's Stylish Jogger Lower Track Pants for Gym Casual Wear for Men(Pack Of 2)</p>
+    <div class="price">Rs 400.90</div>
+  </div>
+
+   <div class="product-card">
+    <img src="image/pant10.avif"
+       onclick="openProduct(
+        'Straight Silver Pants',
+        'Diwazzo Mens Solid Straight Silver Track Pants',
+        '237.99',
+        'clothing',
+        'image/pant10.avif'
+      )">
+    <h3>Straight Silver Pants</h3>
+    <p>Diwazzo Men's Solid Straight Silver Track Pants</p>
+    <div class="price">Rs 237.99</div>
+  </div>
+
+   <div class="product-card">
+    <img src="image/pant6.avif"
+       onclick="openProduct(
+        'Grey Track Pants',
+        'Men Solid Grey Track Pants',
+        '283.99',
+        'clothing',
+        'image/pant6.avif'
+      )">
+    <h3>Grey Track Pants</h3>
+    <p>Men Solid Grey Track Pants</p>
+    <div class="price">Rs 283.99</div>
+  </div>
+
+   <div class="product-card">
+    <img src="image/pant7.avif"
+       onclick="openProduct(
+        'Army Pant',
+        'Men ARMY TRACK 01',
+        '393.99',
+        'clothing',
+        'image/pant7.avif'
+      )">
+    <h3>Army Pant</h3>
+    <p>Men ARMY TRACK 01</p>
+    <div class="price">Rs 393.99</div>
+  </div>
+
+   <div class="product-card">
+    <img src="image/pant9.avif"
+       onclick="openProduct(
+        'Twill MANS TROUSER Trackpant',
+        'Full Elast laycra Pant for Boys Gym Wear Running Tracking Casual Wear Trackpants for Men' , 
+        '393.99',   
+        'clothing',
+        'image/pant9.avif'
+      )">
+    <h3>Twill MANS TROUSER Trackpant</h3>
+    <p>Full Elast laycra Pant for Boys Gym Wear Running Tracking Casual Wear Trackpants for Men</p>
+    <div class="price">Rs 306.99</div>
+  </div>
+
+  <div class="product-card">
+  <img src="image/pant12.webp"
+    onclick="openProduct(
+      'Hope Cargo Jogger Pant',
+      'Men Stylish Casual Cargo Jogger Pant (Beige)',
+      '978.99',
+      'clothing',
+      'image/pant12.webp'
+    )">
+
+  <h3>Hope Cargo Jogger Pant</h3>
+  <p>Men Stylish Casual Cargo Jogger Pant (Beige)</p>
+  <div class="price">Rs 978.99</div>
+</div>
+
+<div class="product-card">
+  <img src="image/pant14.webp" 
+    onclick="openProduct(
+      'Hope Cargo Straight Pant', 
+      'Men Stylish Casual Cargo Pant (Black)', 
+      '978.99', 
+      'clothing', 
+      'image/pant14.webp'
+    )">
+
+  <h3>Hope Cargo Straight Pant</h3>
+  <p>Men Stylish Casual Cargo Pant (Black)</p>
+  <div class="price">Rs 978.99</div>
+</div>
+
+
+</div>
+
+<script>
+/* SAME FUNCTION AS HOME PAGE */
+function openProduct(name, desc, price, type, image){
+  const url =
+    "product.html" +
+    "?name="  + encodeURIComponent(name) +
+    "&desc="  + encodeURIComponent(desc) +
+    "&price=" + price +
+    "&type="  + type +
+    "&image=" + image;
+
+  window.location.href = url;
+}
+function buyNow(product){
+  window.location.href = "Summary.html";
+}
+</script>
+
+</body>
+</html>

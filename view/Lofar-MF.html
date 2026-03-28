@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Men's Lofar Shoes</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+body{
+  background:#f6f6f6;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+  url("image/F1 back.jpg") center/cover no-repeat;
+  color:#fff;
+  padding:100px 30px;
+  text-align:center;
+}
+header h1{
+  font-family:'Monotype Corsiva';
+  font-size:48px;
+}
+
+/* PRODUCTS */
+.products{
+  max-width:1300px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:20px;
+}
+
+.product-card{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+  text-align:center;
+  transition:.3s;
+}
+
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+  cursor:pointer;
+}
+
+.product-card h3{
+  margin:10px 0;
+}
+
+.price{
+  color:#e91e63;
+  font-size:18px;
+  font-weight:bold;
+  margin:8px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Men's Lofar Shoes</h1>
+</header>
+
+<div class="products">
+
+<!-- ALL PRODUCTS NOW USE 'footwear' -->
+
+<div class="product-card">
+  <img src="image/lofarm.webp"
+    onclick="openProduct('Men\'s Tan Moccasins','Premium tan textured leather loafers with metallic bit detail.','1499','footwear','image/lofarm.webp')">
+  <h3>Men's Tan Moccasins</h3>
+  <p>Premium textured leather.</p>
+  <div class="price">Rs 1,499</div>
+</div>
+
+<div class="product-card">
+  <img src="image/l5.webp"
+    onclick="openProduct('Black Quilted Loafers','Sophisticated black loafers featuring a premium diamond-quilted pattern and metallic bit detail.','1499','footwear','image/l5.webp')">
+  <h3>Black Quilted Loafers</h3>
+  <p>Premium quilted texture.</p>
+  <div class="price">Rs 1,499</div>
+</div>
+
+<div class="product-card">
+  <img src="image/l6.webp"
+    onclick="openProduct('Tan Textured Loafers','Elegant tan loafers with a subtle textured finish and classic silver buckle.','1399','footwear','image/l6.webp')">
+  <h3>Tan Textured Loafers</h3>
+  <p>Classic formal tan leather.</p>
+  <div class="price">Rs 1,399</div>
+</div>
+
+<div class="product-card">
+  <img src="image/l1.jpg"
+    onclick="openProduct('Black Paisley Loafers','Elegant formal loafers featuring a high-shine finish and intricate paisley side embossing.','1799','footwear','image/l1.jpg')">
+  <h3>Black Paisley Loafers</h3>
+  <p>Paisley embossed formal.</p>
+  <div class="price">Rs 1,799</div>
+</div>
+
+<div class="product-card">
+  <img src="image/l2.jpg"
+    onclick="openProduct('Brown Textured Moccasins','Classic brown mocs with a perforated texture and signature metallic bit.','1399','footwear','image/l2.jpg')">
+  <h3>Brown Textured Moccasins</h3>
+  <p>Breathable textured leather.</p>
+  <div class="price">Rs 1,399</div>
+</div>
+
+<div class="product-card">
+  <img src="image/l3.jpg"
+    onclick="openProduct('Brown Plaid Loafers','Unique loafers combining smooth leather with a stylish brown plaid fabric insert.','1599','footwear','image/l3.jpg')">
+  <h3>Brown Plaid Loafers</h3>
+  <p>Plaid fabric & leather mix.</p>
+  <div class="price">Rs 1,599</div>
+</div>
+
+<div class="product-card">
+  <img src="image/l4.jpg"
+    onclick="openProduct('Burgundy Patent Loafers','Luxury deep burgundy patent leather loafers with a high-shine finish and metal buckle.','1899','footwear','image/l4.jpg')">
+  <h3>Burgundy Patent Loafers</h3>
+  <p>High-shine luxury finish.</p>
+  <div class="price">Rs 1,899</div>
+</div>
+
+<div class="product-card">
+  <img src="image/l111.webp"
+    onclick="openProduct('Mens Brown Horsebit Loafers','Stylish brown loafers with metal horsebit buckle detail and comfortable sole.','1299','footwear','image/l111.webp')">
+  <h3>Men's Brown Horsebit Loafers</h3>
+  <p>Smart casual slip-ons with metal detail.</p>
+  <div class="price">Rs 1,299</div>
+</div>
+
+<div class="product-card">
+  <img src="image/l10.jpg"
+    onclick="openProduct('Mens Black Loafers','Classic black formal loafers with silver buckle detail.','1299','footwear','image/l10.jpg')">
+  <h3>Men's Black Loafers</h3>
+  <p>Classic formal slip-ons.</p>
+  <div class="price">Rs 1,299</div>
+</div>
+
+<div class="product-card">
+  <img src="image/l11.jpg"
+    onclick="openProduct('Casual Suede Loafers','Tan suede loafers with a modern white contrast sole.','999','footwear','image/l11.jpg')">
+  <h3>Casual Suede Loafers</h3>
+  <p>Stylish casual wear.</p>
+  <div class="price">Rs 999</div>
+</div>
+
+<div class="product-card">
+  <img src="image/l8.jpg"
+    onclick="openProduct('Tan Patterned Loafers','Premium tan loafers featuring a diamond-quilted texture and metallic bit detail.','1499','footwear','image/l8.jpg')">
+  <h3>Tan Patterned Loafers</h3>
+  <p>Diamond-quilted texture.</p>
+  <div class="price">Rs 1,499</div>
+</div>
+
+<div class="product-card">
+  <img src="image/l7.webp"
+    onclick="openProduct('Black Croc Loafers','Sophisticated black loafers with a crocodile skin texture and silver buckle.','1599','footwear','image/l7.webp')">
+  <h3>Black Croc Loafers</h3>
+  <p>Crocodile skin finish.</p>
+  <div class="price">Rs 1,599</div>
+</div>
+
+<div class="product-card">
+  <img src="image/l12.jpg"
+    onclick="openProduct('Black Embossed Loafers','Black formal loafers with a squared toe and embossed leather detailing.','1699','footwear','image/l12.jpg')">
+  <h3>Black Embossed Loafers</h3>
+  <p>Embossed formal leather.</p>
+  <div class="price">Rs 1,699</div>
+</div>
+
+<div class="product-card">
+  <img src="image/ll1.jpg"
+    onclick="openProduct('Brown Textured Loafers','Classic brown slip-ons with a refined textured finish and metallic hardware.','1299','footwear','image/ll1.jpg')">
+  <h3>Brown Textured Loafers</h3>
+  <p>Refined textured finish.</p>
+  <div class="price">Rs 1,299</div>
+</div>
+
+<div class="product-card">
+  <img src="image/ll2.jpg"
+    onclick="openProduct('Dark Tan Loafers','Elegant dark tan formal loafers with a smooth leather-look finish.','1399','footwear','image/ll2.jpg')">
+  <h3>Dark Tan Loafers</h3>
+  <p>Smooth formal design.</p>
+  <div class="price">Rs 1,399</div>
+</div>
+
+</div>
+
+<script>
+function openProduct(name, desc, price, type, image){
+  const url =
+    "product.html" +
+    "?name="  + encodeURIComponent(name) +
+    "&desc="  + encodeURIComponent(desc) +
+    "&price=" + price +
+    "&type="  + type +
+    "&image=" + image;
+
+  window.location.href = url;
+}
+
+function buyNow(product){
+  window.location.href = "Summary.html";
+}
+</script>
+
+</body>
+</html>

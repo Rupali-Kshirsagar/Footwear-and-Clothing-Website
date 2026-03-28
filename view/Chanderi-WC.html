@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chanderi Saree</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+body{
+  background:#f6f6f6;
+}
+
+header{
+  background:#111;
+  color:#fff;
+  padding:30px;
+  text-align:center;
+}
+header h1{
+  font-family:'Monotype Corsiva';
+  font-size:48px;
+}
+
+.products{
+  max-width:1300px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:20px;
+}
+
+.product-card{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+  text-align:center;
+}
+
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+  cursor:pointer;
+}
+
+.product-card h3{
+  margin:10px 0;
+}
+
+.price{
+  color:#e91e63;
+  font-size:18px;
+  font-weight:bold;
+  margin:8px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Chanderi Saree</h1>
+</header>
+
+<div class="products">
+
+<div class="product-card">
+<img src="image/ch2.jpg"
+onclick="openProduct('Chanderi Cotton Saree','Elegant Black Chanderi Saree with Silver Zari Border','899.99','saree','image/ch2.jpg')">
+<h3>Chanderi Cotton Saree</h3>
+<p>Elegant Black Chanderi Saree with Silver Zari Border</p>
+<div class="price">Rs 899.99</div>
+</div>
+
+<div class="product-card">
+<img src="image/ch3.jpg"
+onclick="openProduct('Handloom Cotton Saree','Vibrant Yellow Saree with Red Temple Border and Butta Work','749.99','saree','image/ch3.jpg')">
+<h3>Handloom Cotton Saree</h3>
+<p>Vibrant Yellow Saree with Red Temple Border and Butta Work</p>
+<div class="price">Rs 749.99</div>
+</div>
+
+<div class="product-card">
+<img src="image/ch4.webp"
+onclick="openProduct('Linen Silk Saree','Sky Blue Saree with Contrast Teal Border and Gold Motifs','1150.00','saree','image/ch4.webp')">
+<h3>Linen Silk Saree</h3>
+<p>Sky Blue Saree with Contrast Teal Border and Gold Motifs</p>
+<div class="price">Rs 1150.00</div>
+</div>
+
+<div class="product-card">
+<img src="image/ch5.webp"
+onclick="openProduct('Violet Chanderi Silk','Deep Violet Saree featuring an elegant Silver Zari Border','1050.00','saree','image/ch5.webp')">
+<h3>Violet Chanderi Silk</h3>
+<p>Deep Violet Saree featuring an elegant Silver Zari Border</p>
+<div class="price">Rs 1050.00</div>
+</div>
+
+<div class="product-card">
+<img src="image/ch6.webp"
+onclick="openProduct('Sky Blue Linen Silk','Light Blue Saree with Contrast Teal Border and Gold Motifs','1150.00','saree','image/ch6.webp')">
+<h3>Sky Blue Linen Silk</h3>
+<p>Light Blue Saree with Contrast Teal Border and Gold Motifs</p>
+<div class="price">Rs 1150.00</div>
+</div>
+
+<div class="product-card">
+<img src="image/ch7.webp"
+onclick="openProduct('Earthy Brown Handloom','Rich Brown Saree with Traditional Mustard and Red Accents','920.00','saree','image/ch7.webp')">
+<h3>Earthy Brown Handloom</h3>
+<p>Rich Brown Saree with Traditional Mustard and Red Accents</p>
+<div class="price">Rs 920.00</div>
+</div>
+
+<div class="product-card">
+<img src="image/ch8.webp"
+onclick="openProduct('Orange Silk Saree','Bright Orange Silk Saree with Elegant Gold Border','1199.99','saree','image/ch8.webp')">
+<h3>Orange Silk Saree</h3>
+<p>Bright Orange Silk Saree with Elegant Gold Border</p>
+<div class="price">Rs 1199.99</div>
+</div>
+
+<div class="product-card">
+<img src="image/ch9.webp"
+onclick="openProduct('Printed Green Saree','Olive Green Printed Saree with Traditional Border Design','1049.99','saree','image/ch9.webp')">
+<h3>Printed Green Saree</h3>
+<p>Olive Green Printed Saree with Traditional Border Design</p>
+<div class="price">Rs 1049.99</div>
+</div>
+
+<div class="product-card">
+<img src="image/ch10.webp"
+onclick="openProduct('Dark Green Party Wear Saree','Elegant Dark Green Saree with Golden Lace Border','1299.99','saree','image/ch10.webp')">
+<h3>Dark Green Party Wear Saree</h3>
+<p>Elegant Dark Green Saree with Golden Lace Border</p>
+<div class="price">Rs 1299.99</div>
+</div>
+
+<div class="product-card">
+<img src="image/ch11.webp"
+onclick="openProduct('Lime Green Silk Saree','Soft Lime Green Silk Saree with Tassel Border','1099.99','saree','image/ch11.webp')">
+<h3>Lime Green Silk Saree</h3>
+<p>Soft Lime Green Silk Saree with Tassel Border</p>
+<div class="price">Rs 1099.99</div>
+</div>
+
+<div class="product-card">
+<img src="image/ch13.webp"
+onclick="openProduct('Mustard Yellow Party Wear Saree','Elegant Mustard Yellow Saree with Embroidered Border','1249.99','saree','image/ch13.webp')">
+<h3>Mustard Yellow Party Wear Saree</h3>
+<p>Elegant Mustard Yellow Saree with Embroidered Border</p>
+<div class="price">Rs 1249.99</div>
+</div>
+
+<div class="product-card">
+<img src="image/ch14.webp"
+onclick="openProduct('Grey Designer Saree','Stylish Grey Saree with Subtle Motif Work','1349.99','saree','image/ch14.webp')">
+<h3>Grey Designer Saree</h3>
+<p>Stylish Grey Saree with Subtle Motif Work</p>
+<div class="price">Rs 1349.99</div>
+</div>
+
+</div>
+
+<script>
+function openProduct(name, desc, price, type, image){
+  const url =
+    "product.html" +
+    "?name="  + encodeURIComponent(name) +
+    "&desc="  + encodeURIComponent(desc) +
+    "&price=" + price +
+    "&type="  + type +
+    "&image=" + image;
+
+  window.location.href = url;
+}
+</script>
+
+</body>
+</html>

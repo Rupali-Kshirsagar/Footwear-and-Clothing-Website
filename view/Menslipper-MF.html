@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Men's Slipper </title>
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+body{
+  background:#f6f6f6;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+  url("image/F1 back.jpg") center/cover no-repeat;
+  color:#fff;
+  padding:100px 30px;
+  text-align:center;
+}
+header h1{
+  font-family:'Monotype Corsiva';
+  font-size:48px;
+}
+
+/* PRODUCTS */
+.products{
+  max-width:1300px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:20px;
+}
+
+.product-card{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+  text-align:center;
+  transition:.3s;
+}
+
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+  cursor:pointer;
+}
+
+.product-card h3{
+  margin:10px 0;
+}
+
+.price{
+  color:#e91e63;
+  font-size:18px;
+  font-weight:bold;
+  margin:8px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Men's Slipper</h1>
+</header>
+
+<!-- PRODUCTS -->
+<div class="products">
+   <div class="product-card">
+  <img src="image/sl1.jpg" 
+    onclick="openProduct(
+      'Sporty Adjustable Grey Slides', 
+      'Athletic-style slides featuring a wide, adjustable velcro strap for a customized fit.', 
+      '499', 
+      'footwear', 
+      'image/sl1.jpg'
+    )">
+  <h3>Sporty Adjustable Grey Slides</h3>
+  <p>Athletic-style slides featuring a wide, adjustable velcro strap.</p>
+  <div class="price">Rs 499</div>
+</div>
+
+<div class="product-card">
+  <img src="image/sl2.jpg" 
+    onclick="openProduct(
+      'Sleek Midnight Thong Sandals', 
+      'Ergonomic all-black thong sandals designed for casual comfort with a flexible outsole.', 
+      '599', 
+      'footwear', 
+      'image/sl2.jpg'
+    )">
+  <h3>Sleek Midnight Thong Sandals</h3>
+  <p>Ergonomic all-black thong sandals designed for casual comfort.</p>
+  <div class="price">Rs 599</div>
+</div>
+
+<div class="product-card">
+  <img src="image/sl3.jpg" 
+    onclick="openProduct(
+      'Deep Umber Wide-Strap Sandals', 
+      'Minimalist dark brown sandals with broad, supportive straps and a contoured footbed.', 
+      '849', 
+      'footwear', 
+      'image/sl3.jpg'
+    )">
+  <h3>Deep Umber Wide-Strap Sandals</h3>
+  <p>Minimalist dark brown sandals with broad, supportive straps.</p>
+  <div class="price">Rs 849</div>
+</div>
+<div class="product-card">
+  <img src="image/sl14.webp"
+    onclick="openProduct(
+      'Men Black Comfort Slippers',
+      'Durable black slippers with textured sole and comfortable grip for daily wear.',
+      '599',
+      'footwear',
+      'image/sl14.webp'
+    )">
+    
+  <h3>Men Black Comfort Slippers</h3>
+  <p>Durable black slippers with comfortable grip.</p>
+  <div class="price">Rs 599</div>
+</div>
+
+<div class="product-card">
+  <img src="image/sl5.webp" 
+    onclick="openProduct(
+      'Buckled Chocolate Thong Sandals', 
+      'Contemporary brown thong-style sandals featuring a decorative side buckle and comfort-grip sole.', 
+      '649', 
+      'footwear', 
+      'image/sl5.webp'
+    )">
+  <h3>Buckled Chocolate Thong Sandals</h3>
+  <p>Contemporary brown thong-style sandals featuring a decorative side buckle.</p>
+  <div class="price">Rs 649</div>
+</div>
+
+<div class="product-card">
+  <img src="image/sl7.jpg" 
+    onclick="openProduct(
+      'New Arrival Footwear', 
+      'Premium quality footwear designed for style and durability.', 
+      '999', 
+      'footwear', 
+      'image/sl7.jpg'
+    )">
+  <h3>New Arrival Footwear</h3>
+  <p>Premium quality footwear designed for style and durability.</p>
+  <div class="price">Rs 999</div>
+</div>
+
+<div class="product-card">
+  <img src="image/sl8.jpg" 
+    onclick="openProduct(
+      'Urban Casual Loafers', 
+      'Versatile and stylish loafers designed for all-day comfort and a polished look.', 
+      '1299', 
+      'footwear', 
+      'image/sl8.jpg'
+    )">
+  <h3>Urban Casual Loafers</h3>
+  <p>Versatile and stylish loafers designed for all-day comfort.</p>
+  <div class="price">Rs 1299</div>
+</div>
+
+<div class="product-card">
+  <img src="image/sl9.avif" 
+    onclick="openProduct(
+      'Classic Leather Mules', 
+      'Easy-to-wear leather mules with a refined finish, perfect for semi-formal occasions.', 
+      '1499', 
+      'footwear', 
+      'image/sl9.avif'
+    )">
+  <h3>Classic Leather Mules</h3>
+  <p>Easy-to-wear leather mules with a refined, high-quality finish.</p>
+  <div class="price">Rs 1499</div>
+</div>
+
+<div class="product-card">
+  <img src="image/sl10.webp" 
+    onclick="openProduct(
+      'Premium Outdoor Sandals', 
+      'Rugged and durable sandals built for outdoor adventures and long walks.', 
+      '1100', 
+      'footwear', 
+      'image/sl10.webp'
+    )">
+  <h3>Premium Outdoor Sandals</h3>
+  <p>Rugged and durable sandals built for outdoor adventures.</p>
+  <div class="price">Rs 1100</div>
+</div>
+<div class="product-card">
+  <img src="image/sl11.jpg" 
+    onclick="openProduct(
+      'Casual Comfort Sandals', 
+      'Lightweight and durable sandals perfect for daily errands and relaxed outings.', 
+      '699', 
+      'footwear', 
+      'image/sl11.jpg'
+    )">
+  <h3>Casual Comfort Sandals</h3>
+  <p>Lightweight and durable sandals perfect for daily errands.</p>
+  <div class="price">Rs 699</div>
+</div>
+
+<div class="product-card">
+  <img src="image/sl12.jpg" 
+    onclick="openProduct(
+      'Sleek Midnight Thong Sandals', 
+      'Ergonomic all-black thong sandals designed for casual comfort with a flexible outsole.', 
+      '599', 
+      'footwear', 
+      'image/sl12.jpg'
+    )">
+  <h3>Sleek Midnight Thong Sandals</h3>
+  <p>Ergonomic all-black thong sandals designed for casual comfort.</p>
+  <div class="price">Rs 599</div>
+</div>
+
+<div class="product-card">
+  <img src="image/sl15.jpg"
+    onclick="openProduct(
+      'Men Grey Casual Slippers',
+      'Lightweight grey slippers with soft sole, perfect for indoor and outdoor use.',
+      '649',
+      'footwear',
+      'image/sl15.jpg'
+    )">
+    
+  <h3>Men Grey Casual Slippers</h3>
+  <p>Lightweight grey slippers with soft comfortable sole.</p>
+  <div class="price">Rs 649</div>
+</div>
+</div>
+
+<script>
+/* SAME FUNCTION AS HOME PAGE */
+function openProduct(name, desc, price, type, image){
+  const url =
+    "product.html" +
+    "?name="  + encodeURIComponent(name) +
+    "&desc="  + encodeURIComponent(desc) +
+    "&price=" + price +
+    "&type="  + type +
+    "&image=" + image;
+
+  window.location.href = url;
+}
+function buyNow(product){
+  window.location.href = "Summary.html";
+}
+</script>
+
+</body>
+</html>

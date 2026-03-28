@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Secure Checkout </title>
+
+<style>
+body{
+  font-family:Segoe UI, sans-serif;
+  background:#f4f6f8;
+  margin:0;
+  padding:30px;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+}
+
+h2{
+  margin-bottom:20px;
+}
+
+/* GRID */
+.checkout-grid{
+  display:grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap:30px;
+  align-items:start;
+}
+
+/* PRODUCT BOX */
+#orderItems{
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+.order-item{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:15px;
+  border-bottom:1px solid #eee;
+}
+
+.order-item img{
+  width:150px;
+  height:150px;
+  object-fit:contain;
+  background:#f8f8f8;
+  border-radius:8px;
+  padding:5px;
+}
+
+.details{
+  flex:1;
+}
+
+.price{
+  color:#e91e63;
+  font-weight:bold;
+}
+
+/* ADDRESS BOX */
+.address-box{
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+.input-group{
+  margin-bottom:15px;
+  display:flex;
+  flex-direction:column;
+}
+
+.input-group label{
+  font-size:14px;
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select{
+  padding:9px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  font-size:14px;
+  outline:none;
+}
+
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus{
+  border-color:#e91e63;
+  box-shadow:0 0 5px rgba(233,30,99,0.2);
+}
+
+/* PAYMENT */
+.payment-section{
+  margin-top:20px;
+}
+
+.payment-card{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px;
+  border-radius:8px;
+  border:2px solid #e91e63;
+  background:#fff0f5;
+}
+
+.cod-badge{
+  background:#e91e63;
+  color:#fff;
+  padding:5px 12px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.cod-desc{
+  font-size:12px;
+  color:#666;
+  margin-top:4px;
+}
+
+/* DELIVERY INFO */
+.delivery-info{
+  margin-top:10px;
+  font-size:13px;
+  color:#444;
+}
+
+/* TOTAL */
+.total-box{
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  margin-top:20px;
+  text-align:right;
+  font-size:22px;
+  font-weight:bold;
+  box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* BUTTONS */
+.place-btn{
+  background:#e91e63;
+  color:#fff;
+  padding:14px 25px;
+  border:none;
+  border-radius:6px;
+  font-size:16px;
+  cursor:pointer;
+  float:right;
+  margin-top:15px;
+}
+
+.place-btn:hover{
+  background:#c2185b;
+}
+
+.place-btn:disabled{
+  background:#ccc;
+  cursor:not-allowed;
+}
+
+.back-btn{
+  background:#555;
+  color:#fff;
+  padding:14px 25px;
+  border:none;
+  border-radius:6px;
+  font-size:16px;
+  margin-top:15px;
+  cursor:pointer;
+}
+
+.secure{
+  margin-top:10px;
+  font-size:12px;
+  color:#777;
+}
+
+@media(max-width:768px){
+  .checkout-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>🔒 Secure Checkout</h2>
+
+  <div class="checkout-grid">
+    <div id="orderItems"></div>
+
+    <div class="address-box">
+      <h3>Delivery Details</h3>
+
+      <div class="input-group">
+        <label>Full Name</label>
+        <input type="text" id="name">
+      </div>
+
+      <div class="input-group">
+        <label>State</label>
+        <input type="text" id="state">
+      </div>
+
+      <div class="input-group">
+        <label>City</label>
+        <input type="text" id="city">
+      </div>
+
+      <div class="input-group">
+        <label>Full Address</label>
+        <textarea id="address"></textarea>
+      </div>
+
+      <div class="input-group">
+        <label>Pin Code</label>
+        <input type="text" id="pincode" maxlength="6">
+      </div>
+
+      <div class="input-group">
+        <label>Phone</label>
+        <input type="tel" id="phone" maxlength="10">
+      </div>
+
+      <!-- PROFESSIONAL COD SECTION -->
+      <div class="payment-section">
+        <label><strong>Payment Method</strong></label>
+
+        <div class="payment-card">
+          <div>
+            <strong>Cash on Delivery</strong>
+            <div class="cod-desc">
+              Pay in cash at the time of delivery.
+            </div>
+            <div class="delivery-info">
+              🚚 Estimated Delivery: <span id="deliveryDate"></span><br>
+              🎉 Free Delivery Available
+            </div>
+          </div>
+          <span class="cod-badge">COD</span>
+        </div>
+
+        <div class="secure">
+          🔐 100% Secure Checkout | No Online Payment Required
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="total-box">
+    Total Amount: ₹<span id="totalAmount">0</span>
+  </div>
+
+  <button class="place-btn" id="placeBtn" onclick="placeOrder()">
+    Place Order
+  </button>
+
+  <button class="back-btn" onclick="history.back()">
+    ⬅ Back 
+  </button>
+</div>
+
+<script>
+
+let orderItemsDiv = document.getElementById("orderItems");
+let totalAmount = 0;
+
+// USER
+const email = localStorage.getItem("userEmail");
+
+// GET ITEMS
+let buyNowItem = JSON.parse(localStorage.getItem("orderProduct"));
+let cartItems = JSON.parse(localStorage.getItem("confirmedOrderItems")) || [];
+
+let itemsToDisplay = buyNowItem ? [buyNowItem] : cartItems;
+
+
+// EMPTY CHECK
+if (itemsToDisplay.length === 0) {
+  orderItemsDiv.innerHTML = "<p>No items found to checkout.</p>";
+  document.getElementById("placeBtn").disabled = true;
+} else {
+
+  itemsToDisplay.forEach(item => {
+    let qty = parseInt(item.quantity) || 1;
+    let price = parseFloat(item.price) || 0;
+    let sub = price * qty;
+
+    totalAmount += sub;
+
+    orderItemsDiv.innerHTML += `
+      <div class="order-item">
+        <img src="${item.image}">
+        <div class="details">
+          <h4>${item.name}</h4>
+          <p>Size: ${item.size || 'N/A'}</p>
+          Quantity: ${qty}<br>
+          <span class="price">₹${price.toFixed(2)}</span>
+        </div>
+        <strong>₹${sub.toFixed(2)}</strong>
+      </div>
+    `;
+  });
+}
+
+// TOTAL
+document.getElementById("totalAmount").innerText = totalAmount.toFixed(2);
+
+// DELIVERY DATE
+let date = new Date();
+date.setDate(date.getDate() + 5);
+document.getElementById("deliveryDate").innerText = date.toDateString();
+
+
+// 🔥 PLACE ORDER (FIXED)
+async function placeOrder(){
+
+  const name = document.getElementById("name").value;
+  const state = document.getElementById("state").value;
+  const city = document.getElementById("city").value;
+  const address = document.getElementById("address").value;
+  const pincode = document.getElementById("pincode").value;
+  const phone = document.getElementById("phone").value;
+
+  // VALIDATION
+  if(!name || !state || !city || !address || !pincode || !phone){
+    alert("Please fill all delivery details");
+    return;
+  }
+
+  try{
+
+    const response = await fetch("http://localhost:2000/api/order", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        userEmail: email,
+        customerName: name,
+        phone,
+        state,
+        city,
+        address,
+        pincode,
+        items: itemsToDisplay,
+        totalAmount: totalAmount
+      })
+    });
+
+    const data = await response.json();
+
+    if(response.ok){
+
+      // SAVE FOR CONFIRMATION PAGE
+      localStorage.setItem("lastOrderId", data.orderId);
+      localStorage.setItem("confirmedOrderItems", JSON.stringify(itemsToDisplay));
+      localStorage.setItem("deliveryAddress", JSON.stringify({
+        name,
+        phone
+      }));
+
+      // CLEAR CART
+      localStorage.removeItem("cart_" + email);
+
+      alert("Order Placed Successfully!");
+
+      // REDIRECT
+      window.location.href = "confirmation.html";
+
+    } else {
+      alert(data.error || "Order failed");
+    }
+
+  }catch(err){
+    console.error(err);
+    alert("Server error");
+  }
+
+}
+
+</script>
+</body>
+</html>

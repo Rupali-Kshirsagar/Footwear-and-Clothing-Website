@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>User Profile</title>
+
+<style>
+body{
+  font-family:Segoe UI;
+  background:#f4f6f8;
+  margin:0;
+}
+
+.profile-box{
+  max-width:500px;
+  margin:80px auto;
+  background:#fff;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+  text-align:center;
+}
+
+.avatar{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  background:#e91e63;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:36px;
+  margin:0 auto 15px;
+}
+
+h2{
+  margin-bottom:5px;
+}
+
+p{
+  color:#666;
+}
+
+.btn{
+  margin-top:20px;
+  padding:10px 20px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.logout{
+  background:red;
+  color:white;
+}
+
+.home{
+  background:#333;
+  color:white;
+  margin-right:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="profile-box">
+
+  <div class="avatar" id="avatar">U</div>
+
+  <h2 id="username">User Name</h2>
+  <p id="email">user@email.com</p>
+
+  <button class="btn home" onclick="goHome()">Go to Shop</button>
+  <button class="btn logout" onclick="logout()">Logout</button>
+
+</div>
+
+<script>
+
+// CHECK LOGIN
+const email = localStorage.getItem("userEmail");
+const name = localStorage.getItem("username");
+
+if(!email){
+  window.location.replace = "Login.html";
+}
+
+// SET DATA
+document.getElementById("username").innerText = name;
+document.getElementById("email").innerText = email;
+
+// Avatar first letter
+document.getElementById("avatar").innerText = name ? name.charAt(0).toUpperCase() : "U";
+
+// NAVIGATION
+function goHome(){
+  window.location.href = "Homepage.html";
+}
+
+function logout(){
+ // localStorage.clear();
+  localStorage.removeItem("userEmail");
+  localStorage.removeItem("username");
+  window.location.replace("Homepage.html");
+}
+
+</script>
+
+</body>
+</html>

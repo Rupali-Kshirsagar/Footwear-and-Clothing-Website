@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Men's Shirts</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+body{
+  background:#f6f6f6;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+  url("image/F1 back.jpg") center/cover no-repeat;
+  color:#fff;
+  padding:100px 30px;
+  text-align:center;
+}
+header h1{
+  font-family:'Monotype Corsiva';
+  font-size:48px;
+}
+
+/* PRODUCTS */
+.products{
+  max-width:1300px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:20px;
+}
+
+.product-card{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+  text-align:center;
+  transition:.3s;
+}
+
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+  cursor:pointer;
+}
+
+.product-card h3{
+  margin:10px 0;
+}
+
+.price{
+  color:#e91e63;
+  font-size:18px;
+  font-weight:bold;
+  margin:8px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Men's Shirts</h1>
+</header>
+
+<div class="products">
+
+  
+  <div class="product-card">
+   <img src="image/srt1.jpg" 
+       onclick="openProduct(
+         'Deep Blue Linen Shirt',
+         'Premium slim-fit linen button-down shirt in a vibrant deep blue.',
+         '899.00',
+         'clothing',
+         'image/srt1.jpg'
+       )">
+  <h3>Deep Blue Linen Shirt</h3>
+  <p>Premium slim-fit linen button-down shirt in a vibrant deep blue.</p>
+  <div class="price">Rs 899.00</div>
+</div>
+
+<div class="product-card">
+  <img src="image/srt2.avif" 
+       onclick="openProduct(
+         'Charcoal Blue Textured Shirt',
+         'Formal textured button-down with front pocket detail in charcoal blue.',
+         '1200.50',
+         'clothing',
+         'image/srt2.avif'
+       )">
+  <h3>Charcoal Blue Textured Shirt</h3>
+  <p>Formal textured button-down with front pocket detail in charcoal blue.</p>
+  <div class="price">Rs 1200.50</div>
+</div>
+
+<div class="product-card">
+  <img src="image/srt3.jpg" 
+       onclick="openProduct(
+         'Sky Blue Oxford Shirt',
+         'Classic sky blue tailored oxford shirt, perfect for office or smart-casual wear.',
+         '750.00',
+         'clothing',
+         'image/srt3.jpg'
+       )">
+  <h3>Sky Blue Oxford Shirt</h3>
+  <p>Classic sky blue tailored oxford shirt, perfect for office or smart-casual wear.</p>
+  <div class="price">Rs 750.00</div>
+</div>
+
+<div class="product-card">
+  <img src="image/srt5.jpg" 
+       onclick="openProduct(
+         'Mint Check Casual Shirt',
+         'Stylish mint green and white checkered casual shirt with a comfortable cotton finish.',
+         '650.00',
+         'clothing',
+         'image/srt5.jpg'
+       )">
+  <h3>Mint Check Casual Shirt</h3>
+  <p>Stylish mint green and white checkered casual shirt with a comfortable cotton finish.</p>
+  <div class="price">Rs 650.00</div>
+</div>
+
+<div class="product-card">
+  <img src="image/srt6.webp" 
+       onclick="openProduct(
+         'Black Tipped Polo Shirt',
+         'Classic black short-sleeve polo featuring white contrast tipping on the collar and cuffs.',
+         '899.00',
+         'clothing',
+         'image/srt6.webp'
+       )">
+  <h3>Black Tipped Polo Shirt</h3>
+  <p>Classic black short-sleeve polo featuring white contrast tipping on the collar and cuffs.</p>
+  <div class="price">Rs 899.00</div>
+</div>
+
+<div class="product-card">
+  <img src="image/srt7.avif" 
+       onclick="openProduct(
+         'Maroon Block Striped Tee',
+         'Modern full-sleeve t-shirt with a bold white, striped, and maroon color-block design.',
+         '550.00',
+         'clothing',
+         'image/srt7.avif'
+       )">
+  <h3>Maroon Block Striped Tee</h3>
+  <p>Modern full-sleeve t-shirt with a bold white, striped, and maroon color-block design.</p>
+  <div class="price">Rs 550.00</div>
+</div>
+<div class="product-card">
+  <img src="image/srt8.avif" 
+       onclick="openProduct(
+         'Don’t Quit Black Hoodie',
+         'Premium black pullover hoodie featuring a motivational typographic print and vibrant orange drawstrings.',
+         '1499.00',
+         'clothing',
+         'image/srt8.avif'
+       )">
+  <h3>Don’t Quit Black Hoodie</h3>
+  <p>Premium black pullover hoodie featuring a motivational typographic print.</p>
+  <div class="price">Rs 1499.00</div>
+</div>
+
+<div class="product-card">
+  <img src="image/srt9.avif" 
+       onclick="openProduct(
+         'Essential White Tee',
+         'A must-have classic plain white t-shirt made from ultra-soft, breathable cotton.',
+         '399.00',
+         'clothing',
+         'image/srt9.avif'
+       )">
+  <h3>Essential White Tee</h3>
+  <p>A must-have classic plain white t-shirt made from ultra-soft cotton.</p>
+  <div class="price">Rs 399.00</div>
+</div>
+
+<div class="product-card">
+  <img src="image/srt10.avif" 
+       onclick="openProduct(
+         'Grey Athletic Polo',
+         'Performance-fit grey polo shirt with a black contrast collar and signature chest emblem.',
+         '950.00',
+         'clothing',
+         'image/srt10.avif'
+       )">
+  <h3>Grey Athletic Polo</h3>
+  <p>Performance-fit grey polo shirt with a black contrast collar.</p>
+  <div class="price">Rs 950.00</div>
+</div>
+
+<div class="product-card">
+  <img src="image/srt4.jpg" 
+       onclick="openProduct(
+         'Classic Blue Flannel Shirt',
+         'Heavyweight cotton flannel featuring a traditional blue and navy plaid pattern, ideal for layering.',
+         '1100.00',
+         'clothing',
+         'image/srt4.jpg'
+       )">
+  <h3>Classic Blue Flannel</h3>
+  <p>Heavyweight cotton flannel featuring a traditional blue and navy plaid pattern.</p>
+  <div class="price">Rs 1100.00</div>
+</div>
+
+<div class="product-card">
+  <img src="image/srt12.webp" 
+    onclick="openProduct(
+      'Tactical Half-Zip Polo', 
+      'Men Olive Green Tactical Slim Fit Polo Shirt', 
+      '849.99', 
+      'clothing', 
+      'image/srt12.webp'
+    )">
+
+  <h3>Tactical Half-Zip Polo</h3>
+  <p>Men Olive Green Tactical Slim Fit Polo Shirt</p>
+  <div class="price">Rs 849.99</div>
+</div>
+
+<div class="product-card">
+  <img src="image/srt11.webp" 
+    onclick="openProduct(
+      'Essential Ribbed Tee', 
+      'Men Dark Green Vertical Ribbed Crew Neck T-Shirt', 
+      '599.99', 
+      'clothing', 
+      'image/srt11.webp'
+    )">
+
+  <h3>Essential Ribbed Tee</h3>
+  <p>Men Dark Green Vertical Ribbed Crew Neck T-Shirt</p>
+  <div class="price">Rs 599.99</div>
+</div>
+
+</div>
+
+<script>
+/* SAME FUNCTION AS HOME PAGE */
+function openProduct(name, desc, price, type, image){
+  const url =
+    "product.html" +
+    "?name="  + encodeURIComponent(name) +
+    "&desc="  + encodeURIComponent(desc) +
+    "&price=" + price +
+    "&type="  + type +
+    "&image=" + image;
+
+  window.location.href = url;
+}
+function buyNow(product){
+  window.location.href = "Summary.html";
+}
+</script>
+
+</body>
+</html>

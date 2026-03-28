@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Men's Sandal</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+body{
+  background:#f6f6f6;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+  url("image/F1 back.jpg") center/cover no-repeat;
+  color:#fff;
+  padding:100px 30px;
+  text-align:center;
+}
+header h1{
+  font-family:'Monotype Corsiva';
+  font-size:48px;
+}
+
+/* PRODUCTS */
+.products{
+  max-width:1300px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:20px;
+}
+
+.product-card{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+  text-align:center;
+  transition:.3s;
+}
+
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+  cursor:pointer;
+}
+
+.product-card h3{
+  margin:10px 0;
+}
+
+.price{
+  color:#e91e63;
+  font-size:18px;
+  font-weight:bold;
+  margin:8px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Men's Sandal</h1>
+</header>
+
+<!-- PRODUCTS -->
+<div class="products">
+  
+<div class="product-card">
+  <img src="image/s10.avif"
+    onclick="openProduct(
+      'Men’s Brown Casual Leather Sandals',
+      'Stylish slip-on sandals with premium leather finish and adjustable buckle for all-day comfort.',
+      '1899',
+      'footwear',
+      'image/s10.avif'
+    )">
+  <h3>Men’s Brown Casual Leather Sandals</h3>
+  <p>Stylish slip-on sandals with premium leather finish and adjustable buckle for all-day comfort.</p>
+  <div class="price">Rs 1,899</div>
+</div>
+
+<div class="product-card">
+  <img src="image/sb5.jpg"
+    onclick="openProduct(
+      'Men’s Black Sports Sandals',
+      'Lightweight black sports sandals with adjustable straps and cushioned sole for all-day comfort.',
+      '1799',
+      'footwear',
+      'image/sb5.jpg'
+    )">
+  <h3>Men’s Black Sports Sandals</h3>
+  <p>Lightweight black sports sandals with adjustable straps and cushioned sole for all-day comfort.</p>
+  <div class="price">Rs 1,799</div>
+</div>
+<div class="product-card">
+  <img src="image/sc6.jpg"
+    onclick="openProduct(
+      'Men’s Brown Casual Comfort Sandals',
+      'Comfortable brown casual sandals with dual-strap design and cushioned sole for daily wear.',
+      '1499',
+      'footwear',
+      'image/sc6.jpg'
+    )">
+  <h3>Men’s Brown Casual Comfort Sandals</h3>
+  <p>Comfortable brown casual sandals with dual-strap design and cushioned sole for daily wear.</p>
+  <div class="price">Rs 1,499</div>
+</div>
+<div class="product-card">
+  <img src="image/sb17.jpg"
+    onclick="openProduct(
+      'Men’s Brown Sporty Outdoor Sandals',
+      'Lightweight sporty sandals with adjustable Velcro straps and cushioned sole for outdoor and daily wear.',
+      '2199',
+      'footwear',
+      'image/sb17.jpg'
+    )">
+  <h3>Men’s Brown Sporty Outdoor Sandals</h3>
+  <p>Lightweight sporty sandals with adjustable Velcro straps and cushioned sole for outdoor and daily wear.</p>
+  <div class="price">Rs 2,199</div>
+</div>
+
+<div class="product-card">
+  <img src="image/s18.webp"
+    onclick="openProduct(
+      'Men’s Grey & Black Trekking Sandals',
+      'Durable trekking sandals with adjustable Velcro straps, anti-slip sole, and cushioned footbed for outdoor adventures.',
+      '2499',
+      'footwear',
+      'image/s18.webp'
+    )">
+  <h3>Men’s Grey & Black Trekking Sandals</h3>
+  <p>Durable trekking sandals with adjustable Velcro straps, anti-slip sole, and cushioned footbed for outdoor adventures.</p>
+  <div class="price">Rs 2,499</div>
+</div>
+<div class="product-card">
+  <img src="image/s3.jpg"
+    onclick="openProduct(
+      'Men’s Brown Leather Closed-Toe Sandals',
+      'Premium brown leather closed-toe sandals with buckle strap, perfect for formal and ethnic wear.',
+      '1999',
+      'footwear',
+      'image/s3.jpg'
+    )">
+  <h3>Men’s Brown Leather Closed-Toe Sandals</h3>
+  <p>Premium brown leather closed-toe sandals with buckle strap, perfect for formal and ethnic wear.</p>
+  <div class="price">Rs 1,999</div>
+</div>
+
+<div class="product-card">
+  <img src="image/s8.jpg"
+    onclick="openProduct(
+      'Men’s Black Sporty Outdoor Sandals',
+      'Lightweight sporty sandals with adjustable straps and rugged sole for daily and outdoor use.',
+      '1599',
+      'footwear',
+      'image/s8.jpg'
+    )">
+  <h3>Men’s Black Sporty Outdoor Sandals</h3>
+  <p>Lightweight sporty sandals with adjustable straps and rugged sole for daily and outdoor use.</p>
+  <div class="price">Rs 1,599</div>
+</div>
+<div class="product-card">
+  <img src="image/sm1.jpg"
+    onclick="openProduct(
+      'Men’s Black Sporty Outdoor Sandals',
+      'Lightweight sporty sandals with adjustable straps and rugged sole for daily and outdoor use.',
+      '1599',
+      'footwear',
+      'image/sm1.jpg'
+    )">
+  <h3>Men’s Black Sporty Outdoor Sandals</h3>
+  <p>Lightweight sporty sandals with adjustable straps and rugged sole for daily and outdoor use.</p>
+  <div class="price">Rs 1,599</div>
+</div>
+
+</div>
+
+<script>
+/* SAME FUNCTION AS HOME PAGE */
+function openProduct(name, desc, price, type, image){
+  const url =
+    "product.html" +
+    "?name="  + encodeURIComponent(name) +
+    "&desc="  + encodeURIComponent(desc) +
+    "&price=" + price +
+    "&type="  + type +
+    "&image=" + image;
+
+  window.location.href = url;
+}
+function buyNow(product){
+  window.location.href = "Summary.html";
+}
+</script>
+
+</body>
+</html>

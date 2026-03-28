@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kanjeevaram Saree</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+body{
+  background:#f6f6f6;
+}
+
+/* HEADER */
+header{
+  background:#111;
+  color:#fff;
+  padding:30px;
+  text-align:center;
+}
+header h1{
+  font-family:'Monotype Corsiva';
+  font-size:48px;
+}
+
+/* PRODUCTS */
+.products{
+  max-width:1300px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:20px;
+}
+
+.product-card{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+  text-align:center;
+  transition:.3s;
+}
+
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+  cursor:pointer;
+}
+
+.product-card h3{
+  margin:10px 0;
+}
+
+.price{
+  color:#e91e63;
+  font-size:18px;
+  font-weight:bold;
+  margin:8px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Kanjeevaram Saree</h1>
+</header>
+
+<div class="products">
+
+  <div class="product-card">
+    <img src="image/kan2.webp"
+      onclick="openProduct(
+        'Kanjivaram Saree',
+        'Teal Blue Silk Woven Kanjivaram Saree',
+        '1200.99',
+        'saree',
+        'image/kan2.webp'
+      )">
+    <h3>Kanjivaram Saree</h3>
+    <p>Teal Blue Silk Woven Kanjivaram Saree</p>
+    <div class="price">Rs 1,200.99</div>
+  </div>
+
+  <div class="product-card">
+    <img src="image/kan3.webp"
+      onclick="openProduct(
+        ' Kanjeevaram Saree',
+        'ALMAari FASHION Woven Design Kanjeevaram Saree',
+        '1000.99',
+        'saree',
+        'image/kan3.webp'
+      )">
+    <h3> Kanjeevaram Saree</h3>
+    <p>ALMAari FASHION Woven Design Kanjeevaram Saree</p>
+    <div class="price">Rs 1,000.99</div>
+  </div>
+
+  <div class="product-card">
+    <img src="image/kan4.webp"
+      onclick="openProduct(
+        'Radiant Orange Kanjivaram',
+        'Radiant Orange Kanjivaram Silk Saree',
+        '1050.99',
+        'saree',
+        'image/kan4.webp'
+      )">
+    <h3>Radiant Orange Kanjivaram</h3>
+    <p>Radiant Orange Kanjivaram Silk Saree</p>
+    <div class="price">Rs 1,050.99</div>
+  </div>
+
+  <div class="product-card">
+    <img src="image/kan5.webp"
+      onclick="openProduct(
+        'Kanjeevaram Saree',
+        'Mitera Pink & Gold-Toned Silk Blend Kanjeevaram Saree',
+        '900.99',
+        'saree',
+        'image/kan5.webp'
+      )">
+    <h3>Kanjeevaram Saree</h3>
+    <p>Mitera Pink & Gold-Toned Silk Blend Kanjeevaram Saree</p>
+    <div class="price">Rs 900.99</div>
+  </div>
+
+  <div class="product-card">
+    <img src="image/kan6.webp"
+      onclick="openProduct(
+        'Kanjivaram Pure Silk Saree',
+        'Black Handloom Kanjivaram Pure Silk Saree With Blouse Piece',
+        '4000.99',
+        'saree',
+        'image/kan6.webp'
+      )">
+    <h3>Kanjivaram Pure Silk Sareet</h3>
+    <p>Black Handloom Kanjivaram Pure Silk Saree With Blouse Piece</p>
+    <div class="price">Rs 4,000.99</div>
+  </div>
+
+  <div class="product-card">
+    <img src="image/kan7.webp"
+      onclick="openProduct(
+        'Royal Purple Kanjivaram',
+        'Royal Purple Pure Kanjivaram Silk Saree with Golden Zari Buttas & Rich Brocade Pallu',
+        '1549.00',
+        'saree',
+        'image/kan7.webp'
+      )">
+    <h3>Royal Purple Kanjivaram</h3>
+    <p>Royal Purple Pure Kanjivaram Silk Saree with Golden Zari Buttas & Rich Brocade Pallu.</p>
+    <div class="price">Rs 1,549.00</div>
+  </div>
+
+  <div class="product-card">
+    <img src="image/kan8.webp"
+      onclick="openProduct(
+        'Engrossing Purple Kanjivaram',
+        'Engrossing Purple Kanjivaram Silk Saree With Epiphany Blouse Piece',
+        '1999.00',
+        'saree',
+        'image/kan8.webp'
+      )">
+    <h3>Engrossing Purple Kanjivaram</h3>
+    <p>Engrossing Purple Kanjivaram Silk Saree With Epiphany Blouse Piece.</p>
+    <div class="price">Rs 1,999.00</div>
+  </div>
+
+  <div class="product-card">
+    <img src="image/kan9.webp"
+      onclick="openProduct(
+        ' Kanjivaram Saree',
+        'Royal Grey Kanjivaram Silk Saree',
+        '1695.99',
+        'saree',
+        'image/kan9.webp'
+      )">
+    <h3> Kanjivaram Saree</h3>
+    <p>Royal Grey Kanjivaram Silk Saree.</p>
+    <div class="price">Rs 1,695.99</div>
+  </div>
+
+  <div class="product-card">
+    <img src="image/kan10.webp"
+      onclick="openProduct(
+        'Grey Traditional Kanjivaram ',
+        'Grey Traditional Kanjivaram Tissues Pattu Saree With Zari Work',
+        '1499.00',
+        'saree',
+        'image/kan10.webp'
+      )">
+    <h3>Grey Traditional Kanjivaram </h3>
+    <p>Grey Traditional Kanjivaram Tissues Pattu Saree With Zari Work</p>
+    <div class="price">Rs 1499.00</div>
+  </div>
+
+  <div class="product-card">
+    <img src="image/kan11.webp"
+      onclick="openProduct(
+        'Light Blue Kanjivaram',
+        'Blue Kanjivaram Silk Saree With Blouse Piece',
+        '3000.00',
+        'saree',
+        'image/kan11.webp'
+      )">
+    <h3>Light Blue Kanjivaram</h3>
+    <p>Blue Kanjivaram Silk Saree With Blouse Piece</p>
+    <div class="price">Rs 3,000.00</div>
+  </div>
+
+    <div class="product-card">
+    <img src="image/kan12.webp"
+      onclick="openProduct(
+        'Plain Original Kanjivaram',
+        'Womens Plain Original Kanjivaram Saree',
+        '899.00',
+        'saree',
+        'image/kan12.webp'
+      )">
+    <h3>Plain Original Kanjivaram</h3>
+    <p>Women's Plain Original Kanjivaram Saree</p>
+    <div class="price">Rs 899.00</div>
+  </div>
+
+    <div class="product-card">
+    <img src="image/kan13.webp"
+      onclick="openProduct(
+        'Dark Green Kanjivaram',
+        'Kanjivaram Soft Silk Saree',
+        '2488.00',
+        'saree',
+        'image/kan13.webp'
+      )">
+    <h3>Dark Green Kanjivaram</h3>
+    <p>Kanjivaram Soft Silk Saree</p>
+    <div class="price">Rs 2,488.00</div>
+  </div>
+
+
+</div>
+
+<script>
+/* SAME FUNCTION AS HOME PAGE */
+function openProduct(name, desc, price, type, image){
+  const url =
+    "product.html" +
+    "?name="  + encodeURIComponent(name) +
+    "&desc="  + encodeURIComponent(desc) +
+    "&price=" + price +
+    "&type="  + type +
+    "&image=" + image;
+
+  window.location.href = url;
+}
+function buyNow(product){
+  window.location.href = "Summary.html";
+}
+</script>
+
+</body>
+</html>

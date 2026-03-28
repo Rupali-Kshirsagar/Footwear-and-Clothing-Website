@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Men's Hand Gloves </title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+body{
+  background:#f6f6f6;
+}
+
+/* HEADER */
+header{
+  background:#111;
+  color:#fff;
+  padding:30px;
+  text-align:center;
+}
+
+/* PRODUCTS */
+.products{
+  max-width:1300px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:20px;
+}
+
+.product-card{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+  text-align:center;
+}
+
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+  cursor:pointer;
+}
+
+.product-card h3{
+  margin:10px 0;
+}
+
+.price{
+  color:#e91e63;
+  font-size:18px;
+  font-weight:bold;
+  margin:8px 0;
+}
+
+.button-group{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+}
+
+button{
+  padding:8px 14px;
+  border:none;
+  border-radius:4px;
+  cursor:pointer;
+}
+
+.buy-btn{
+  background:#e91e63;
+  color:#fff;
+}
+
+.cart-btn{
+  background:#111;
+  color:#fff;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Men's Hand Gloves</h1>
+</header>
+
+<div class="products">
+
+  
+  <div class="product-card">
+    <img src="image/hd.webp"
+      onclick="openProduct(
+        'AUTOSITE Sun UV Protection Sports Arm Sleeves',
+        'AUTOSITE Sun UV Protection Sports Arm Sleeves for Men Cycling Gloves (Black)',
+        '109.99',
+        'clothing',
+        'image/hd.webp'
+      )">
+    <h3>AUTOSITE Sun UV Protection Sports Arm Sleeves </h3>
+    <p>AUTOSITE Sun UV Protection Sports Arm Sleeves for Men Cycling Gloves (Black)</p>
+    <div class="price">Rs 109.99</div>
+  </div>
+
+  <!-- PANT 2 -->
+  <div class="product-card">
+    <img src="image/hd2.webp"
+       onclick="openProduct(
+        'Half Finger Cycling Gloves',
+        'MozFit Anti-Slip Outdoor Professional Road Bike Bicycle Half Finger Cycling Gloves Riding Gloves',
+        '180.99',
+        'clothing',
+        'image/hd2.webp'
+      )">
+    <h3>Half Finger Cycling Gloves</h3>
+    <p>MozFit Anti-Slip Outdoor Professional Road Bike Bicycle Half Finger Cycling Gloves Riding Gloves</p>
+    <div class="price">Rs 180.99</div>
+  </div>
+
+  <!-- PANT 3 -->
+  <div class="product-card">
+    <img src="image/hd4.webp"
+       onclick="openProduct(
+        'Gloves for Men Nitrile Safety Gloves',
+        'starkyte Cut Resistant Industrial Gloves | Oil & Chemical Safe ',
+        '157.67',
+        'clothing',
+        'image/hd4.webp'
+      )">
+    <h3>Gloves for Men Nitrile Safety Gloves</h3>
+    <p>starkyte Cut Resistant Industrial Gloves | Oil & Chemical Safe</p>
+    <div class="price">Rs 157.67</div>
+  </div>
+
+  <!-- PANT 4 -->
+  <div class="product-card">
+    <img src="image/cap4.avif"
+         onclick="openProduct(
+        'NY Baseball half Net for Men',
+        'Genuine Quality Cap, Mesh Cap, Trucker Cap for Girls and Boys, Trending Cap',
+        '134.91',
+        'clothing',
+        'image/cap4.jpg'
+      )">
+    <h3>NY Baseball half Net for Men</h3>
+    <p>Genuine Quality Cap, Mesh Cap, Trucker Cap for Girls and Boys, Trending Cap</p>
+    <div class="price">Rs 134.91</div>
+  </div>
+
+  <!-- PANT 5 -->
+  <div class="product-card">
+    <img src="image/cap5.webp"
+       onclick="openProduct(
+        'Army Cap',
+        'Solid, Self Design Sports/Regular Cap',
+        '194.99',
+        'clothing',
+        'image/cap5.webp'
+      )">
+    <h3>Army Cap</h3>
+    <p>Solid, Self Design Sports/Regular Cap</p>
+    <div class="price">Rs 194.99</div>
+  </div>
+
+   <div class="product-card">
+    <img src="image/cap6.webp"
+       onclick="openProduct(
+        'Regular Cap',
+        'Embroidered Sports/Regular Cap',
+        '162.90',
+        'clothing',
+        'image/cap6.webp'
+      )">
+    <h3>Regular Cap</h3>
+    <p>Embroidered Sports/Regular Cap</p>
+    <div class="price">Rs 162.90</div>
+  </div>
+
+   <div class="product-card">
+    <img src="image/cap7.webp"
+       onclick="openProduct(
+        'Regular Cap',
+        'Sports/Regular Cap',
+        '142.99',
+        'clothing',
+        'image/cap7.webp'
+      )">
+    <h3>Regular Cap</h3>
+    <p>Sports/Regular Cap</p>
+    <div class="price">Rs 142.99</div>
+  </div>
+
+   <div class="product-card">
+    <img src="image/cap8.webp"
+       onclick="openProduct(
+        'Regular Cap',
+        'Embroidered Sports/Regular Cap',
+        '198.99',
+        'clothing',
+        'image/cap8.webp'
+      )">
+    <h3>Regular Cap</h3>
+    <p>Embroidered Sports/Regular Cap</p>
+    <div class="price">Rs 198.99</div>
+  </div>
+
+   <div class="product-card">
+    <img src="image/cap9.webp"
+       onclick="openProduct(
+        'Sport Cap',
+        'Embroidered Sports/Regular Cap',
+        '130.99',
+        'clothing',
+        'image/cap9.webp'
+      )">
+    <h3>Sport Cap</h3>
+    <p>Embroidered Sports/Regular Cap</p>
+    <div class="price">Rs 130.99</div>
+  </div>
+
+</div>
+
+<script>
+/* SAME FUNCTION AS HOME PAGE */
+function openProduct(name, desc, price, type, image){
+  const url =
+    "product.html" +
+    "?name="  + encodeURIComponent(name) +
+    "&desc="  + encodeURIComponent(desc) +
+    "&price=" + price +
+    "&type="  + type +
+    "&image=" + image;
+
+  window.location.href = url;
+}
+function buyNow(product){
+  window.location.href = "Summary.html";
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sign Up | StyleStep</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("image/F1 back.jpg") center/cover no-repeat;
+}
+
+/* SIGNUP BOX */
+.signup-box{
+  background:white;
+  width:380px;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  text-align:center;
+}
+
+.signup-box h1{
+  font-family:'Monotype Corsiva';
+  font-size:36px;
+  margin-bottom:10px;
+  color:#111;
+}
+
+.signup-box p{
+  color:#666;
+  margin-bottom:20px;
+}
+
+/* INPUTS */
+.input-box{
+  position:relative;
+  margin-bottom:15px;
+}
+
+.input-box input{
+  width:100%;
+  padding:10px 40px;
+  border:1px solid #ccc;
+  border-radius:6px;
+  outline:none;
+}
+
+.input-box i{
+  position:absolute;
+  top:50%;
+  left:12px;
+  transform:translateY(-50%);
+  color:#888;
+}
+
+/* BUTTON */
+.signup-btn{
+  width:100%;
+  padding:10px;
+  background:#111;
+  color:white;
+  border:none;
+  border-radius:6px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.signup-btn:hover{
+  background:#333;
+}
+
+/* LINKS */
+.links{
+  margin-top:15px;
+  font-size:14px;
+}
+
+.links a{
+  text-decoration:none;
+  color:#e91e63;
+}
+
+.links a:hover{
+  text-decoration:underline;
+}
+</style>
+</head>
+
+<body>
+
+<div class="signup-box">
+  <h1>Shree Footwear & Clothing System</h1>
+  <p>Create your account</p>
+
+  <form onsubmit="signup(event)">
+    <div class="input-box">
+      <i class="fa fa-user"></i>
+      <input type="text" id="name" placeholder="Full Name" required>
+    </div>
+
+    <div class="input-box">
+      <i class="fa fa-envelope"></i>
+      <input type="email" id="email" placeholder="Email Address" required>
+    </div>
+
+    <div class="input-box">
+      <i class="fa fa-lock"></i>
+      <input type="password" id="password" placeholder="Password" required>
+    </div>
+
+    <div class="input-box">
+      <i class="fa fa-lock"></i>
+      <input type="password" id="confirm" placeholder="Confirm Password" required>
+    </div>
+
+    <button class="signup-btn" type="submit">Sign Up</button>
+  </form>
+
+  <div class="links">
+    <p>Already have an account? <a href="Login.html">Login</a></p>
+  </div>
+</div>
+
+<script>
+async function signup(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const confirm = document.getElementById("confirm").value;
+
+  if (password !== confirm) {
+    alert("Passwords do not match!");
+    return;
+  }
+
+  // Data to send to MongoDB via backend
+  const userData = { name, email, password };
+
+  try {
+    const response = await fetch('/api/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(userData)
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      alert(result.message);
+      window.location.href = "Login.html"; // Redirect to login on success
+    } else {
+      alert(result.error);
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("An error occurred while connecting to the server.");
+  }
+}
+</script>
+
+</body>
+</html>

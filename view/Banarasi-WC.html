@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Banarasi Saree</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+body{
+  background:#f6f6f6;
+}
+
+/* HEADER */
+header{
+  background:#111;
+  color:#fff;
+  padding:30px;
+  text-align:center;
+}
+header h1{
+  font-family:'Monotype Corsiva';
+  font-size:48px;
+}
+
+/* PRODUCTS */
+.products{
+  max-width:1300px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:20px;
+}
+
+.product-card{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+  text-align:center;
+  transition:.3s;
+}
+
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+  cursor:pointer;
+}
+
+.product-card h3{
+  margin:10px 0;
+}
+
+.price{
+  color:#e91e63;
+  font-size:18px;
+  font-weight:bold;
+  margin:8px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Banarasi Saree</h1>
+</header>
+
+<!-- PRODUCTS -->
+<div class="products">
+
+ <div class="product-card">
+    <img src="image/ban1.webp" 
+      onclick="openProduct(
+        'Banarasi Silk Saree', 
+        'Wine Silk Woven Banarasi Saree with Silver Zari', 
+        '1450.00', 
+        'saree', 
+        'image/ban1.webp'
+      )">
+    <h3>Banarasi Silk Saree</h3>
+    <p>Wine Silk Woven Banarasi Saree with Silver Zari</p>
+    <div class="price">Rs 1450.00</div>
+</div>
+
+<div class="product-card">
+    <img src="image/ba3.webp" 
+      onclick="openProduct(
+        'Banarasi Silk Saree', 
+        'Royal Blue Woven Silk Saree with Silver Border', 
+        '1100.00', 
+        'saree', 
+        'image/ba3.webp'
+      )">
+    <h3>Banarasi Silk Saree</h3>
+    <p>Royal Blue Woven Silk Saree with Silver Border</p>
+    <div class="price">Rs 1100.00</div>
+</div>
+
+<div class="product-card">
+    <img src="image/ban3.webp" 
+      onclick="openProduct(
+        'Banarasi Silk Saree', 
+        'Classic Black Silk Saree with Gold Temple Border', 
+        '1599.99', 
+        'saree', 
+        'image/ban3.webp'
+      )">
+    <h3>Banarasi Silk Saree</h3>
+    <p>Classic Black Silk Saree with Gold Temple Border</p>
+    <div class="price">Rs 1599.99</div>
+</div>
+<div class="product-card">
+    <img src="image/ban4.webp" 
+        onclick="openProduct(
+            'Banarasi Silk Saree', 
+            'Elegant Grey Silk Saree with Silver Buta Work', 
+            '1450.00', 
+            'saree', 
+            'image/ban4.webp'
+        )">
+    <h3>Banarasi Silk Saree</h3>
+    <p>Elegant Grey Silk Saree with Silver Buta Work</p>
+    <div class="price">Rs 1450.99</div>
+</div>
+
+<div class="product-card">
+    <img src="image/ban5.webp" 
+        onclick="openProduct(
+            'Banarasi Silk Saree', 
+            'Vibrant Red Silk Saree with Heavy Zari Pallu', 
+            '1899.99', 
+            'saree', 
+            'image/ban5.webp'
+        )">
+    <h3>Banarasi Silk Saree</h3>
+    <p>Vibrant Red Silk Saree with Heavy Zari Pallu</p>
+    <div class="price">Rs 1899.99</div>
+</div>
+
+<div class="product-card">
+    <img src="image/ban6.webp" 
+        onclick="openProduct(
+            'Banarasi Silk Saree', 
+            'Deep Purple Silk Saree with Minimal Gold Border', 
+            '1299.99', 
+            'saree', 
+            'image/ban6.webp'
+        )">
+    <h3>Banarasi Silk Saree</h3>
+    <p>Deep Purple Silk Saree with Minimal Gold Border</p>
+    <div class="price">Rs 1299.99</div>
+</div>
+
+<div class="product-card">
+    <img src="image/ban7.webp" 
+      onclick="openProduct(
+        'Banarasi Silk Saree', 
+        'Emerald Green Silk Saree with rich Gold Motifs', 
+        '1699.99', 
+        'saree', 
+        'image/ban7.webp'
+      )">
+    <h3>Banarasi Silk Saree</h3>
+    <p>Emerald Green Silk Saree with rich Gold Motifs</p>
+    <div class="price">Rs 1699.99</div>
+</div>
+
+<div class="product-card">
+    <img src="image/ban8.webp" 
+      onclick="openProduct(
+        'Banarasi Silk Saree', 
+        'Emerald Green Silk Saree with Conk Gold Motifs', 
+        '1550.00', 
+        'saree', 
+        'image/ban8.webp'
+      )">
+    <h3>Banarasi Silk Saree</h3>
+    <p>Emerald Green Silk Saree with Conk Gold Motifs</p>
+    <div class="price">Rs 1550.00</div>
+</div>
+
+<div class="product-card">
+    <img src="image/ban9.webp" 
+      onclick="openProduct(
+        'Banarasi Silk Saree', 
+        'Emerald Green Silk Saree with Daren Rterren Motifs', 
+        '1399.99', 
+        'saree', 
+        'image/ban9.webp'
+      )">
+    <h3>Banarasi Silk Saree</h3>
+    <p>Emerald Green Silk Saree with Daren Rterren Motifs</p>
+    <div class="price">Rs 1399.99</div>
+</div>
+
+<div class="product-card">
+    <img src="image/b1.webp" 
+      onclick="openProduct(
+        'Banarasi Silk Saree', 
+        'plain Black Silk Saree with Gold Temple Border', 
+        '800.99', 
+        'saree', 
+        'image/b1.webp'
+      )">
+    <h3>Banarasi Silk Saree</h3>
+    <p>Plain Black Silk Saree with Gold Temple Border</p>
+    <div class="price">Rs 800.99</div>
+</div>
+
+   <div class="product-card">
+    <img src="image/ban12.webp" 
+      onclick="openProduct(
+        'Banarasi Silk Saree', 
+        'Deep Purple Silk Saree with Classic Gold Border', 
+        '1299.99', 
+        'saree', 
+        'image/ban12.webp'
+      )">
+    <h3>Banarasi Silk Saree</h3>
+    <p>Deep Purple Silk Saree with Classic Gold Border</p>
+    <div class="price">Rs 1299.99</div>
+</div>
+
+    <div class="product-card">
+    <img src="image/ban11.webp" 
+      onclick="openProduct(
+        'Banarasi Silk Saree', 
+        'Elegant Grey Silk Saree with Silver Buta Work', 
+        '1449.99', 
+        'saree', 
+        'image/ban11.webp'
+      )">
+    <h3>Banarasi Silk Saree</h3>
+    <p>Elegant Grey Silk Saree with Silver Buta Work</p>
+    <div class="price">Rs 1449.99</div>
+</div>
+
+</div>
+
+<script>
+/* SAME FUNCTION AS HOME PAGE */
+function openProduct(name, desc, price, type, image){
+  const url =
+    "product.html" +
+    "?name="  + encodeURIComponent(name) +
+    "&desc="  + encodeURIComponent(desc) +
+    "&price=" + price +
+    "&type="  + type +
+    "&image=" + image;
+
+  window.location.href = url;
+}
+function buyNow(product){
+  window.location.href = "Summary.html";
+}
+</script>
+
+</body>
+</html>

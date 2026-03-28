@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("image/F1 back.jpg") center/cover no-repeat;
+}
+
+.login-box{
+  background:white;
+  width:360px;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  text-align:center;
+}
+
+.login-box h1{
+  font-family:'Monotype Corsiva';
+  font-size:34px;
+  margin-bottom:10px;
+}
+
+.login-box p{
+  color:#666;
+  margin-bottom:20px;
+}
+
+.input-box{
+  position:relative;
+  margin-bottom:15px;
+}
+
+.input-box input{
+  width:100%;
+  padding:10px 40px;
+  border:1px solid #ccc;
+  border-radius:6px;
+}
+
+.input-box i{
+  position:absolute;
+  top:50%;
+  left:12px;
+  transform:translateY(-50%);
+  color:#888;
+}
+
+.login-btn{
+  width:100%;
+  padding:10px;
+  background:#111;
+  color:white;
+  border:none;
+  border-radius:6px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.login-btn:hover{
+  background:#333;
+}
+
+.links{
+  margin-top:15px;
+  font-size:14px;
+}
+
+.links a{
+  text-decoration:none;
+  color:#e91e63;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+  <h1>Footwear & Clothing</h1>
+  <p>Login to your account</p>
+
+  <form onsubmit="login(event)">
+    
+    <div class="input-box">
+      <i class="fa fa-envelope"></i>
+      <input type="email" id="email" placeholder="Email" required>
+    </div>
+
+    <div class="input-box">
+      <i class="fa fa-lock"></i>
+      <input type="password" id="password" placeholder="Password" required>
+    </div>
+
+    <button class="login-btn" type="submit">Login</button>
+
+  </form>
+
+  <div class="links">
+    <p>Don't have an account? <a href="Signup.html">Sign Up</a></p>
+  </div>
+</div>
+
+<script>
+
+// ✅ AUTO REDIRECT IF ALREADY LOGGED IN
+if(localStorage.getItem("userEmail")){
+  window.location.href = "Homepage.html";
+}
+
+// ✅ LOGIN FUNCTION
+async function login(e){
+  e.preventDefault();
+
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  try {
+    const response = await fetch('/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email, password })
+    });
+
+    const result = await response.json();
+console.log(result);   // 👈 ADD THIS LINE
+
+    if(response.ok){
+
+      // ✅ STORE USER DATA PROPERLY
+      localStorage.setItem("userEmail", result.email);
+      localStorage.setItem("username", result.name);
+
+      alert("Login successful ✅");
+
+      window.location.href = "Homepage.html";
+
+    } else {
+      alert(result.error);
+    }
+
+  } catch(error){
+    alert("Server error");
+  }
+}
+
+// ✅ OPTIONAL: LOGOUT FUNCTION (use in other pages)
+function logout(){
+  localStorage.removeItem("userEmail");
+  localStorage.removeItem("username");
+  window.location.href="Homepage.html";
+}
+
+</script>
+
+</body>
+</html>

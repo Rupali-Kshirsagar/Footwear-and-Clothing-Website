@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Men's & Women Casual Shoes</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+body{
+  background:#f6f6f6;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+  url("image/F1 back.jpg") center/cover no-repeat;
+  color:#fff;
+  padding:100px 30px;
+  text-align:center;
+}
+header h1{
+  font-family:'Monotype Corsiva';
+  font-size:48px;
+}
+
+/* PRODUCTS */
+.products{
+  max-width:1300px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:20px;
+}
+
+.product-card{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+  text-align:center;
+  transition:.3s;
+}
+
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+  cursor:pointer;
+}
+
+.product-card h3{
+  margin:10px 0;
+}
+
+.price{
+  color:#e91e63;
+  font-size:18px;
+  font-weight:bold;
+  margin:8px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Men's & Women Casual Shoes</h1>
+</header>
+
+<div class="products">
+
+<div class="product-card">
+  <img src="image/c1.jpg"
+   onclick="openProduct('Sporty White Lows','White sneakers with black accents.','1499','footwear','image/c1.jpg')">
+  <h3>Sporty White Lows</h3>
+  <p>Clean white with black trim.</p>
+  <div class="price">Rs 1,499</div>
+</div>
+
+<div class="product-card">
+  <img src="image/c2.webp"
+    onclick="openProduct('Tan Comfort Loafers','Classic tan loafers with a soft cushioned sole.','1299','footwear','image/c2.webp')">
+  <h3>Tan Comfort Loafers</h3>
+  <p>Classic tan loafers with a soft cushioned sole.</p>
+  <div class="price">Rs 1,299</div>
+</div>
+
+<div class="product-card">
+  <img src="image/c3.jpg"
+    onclick="openProduct('Grey Casual Sneakers','Versatile grey lace-up sneakers with a white sole.','1199','footwear','image/c3.jpg')">
+  <h3>Grey Casual Sneakers</h3>
+  <p>Versatile grey lace-up sneakers with a white sole.</p>
+  <div class="price">Rs 1,199</div>
+</div>
+
+<div class="product-card">
+  <img src="image/c4.jpg"
+    onclick="openProduct('Navy Blue Lifestyle Shoes','Sleek navy blue lace-ups with a contrast white sole.','1399','footwear','image/c4.jpg')">
+  <h3>Navy Blue Lifestyle Shoes</h3>
+  <p>Sleek navy blue lace-ups with a contrast white sole.</p>
+  <div class="price">Rs 1,399</div>
+</div>
+
+<div class="product-card">
+  <img src="image/c13.webp"
+   onclick="openProduct('Mesh Runners','Breathable brown knit mesh.','1299','footwear','image/c13.webp')">
+  <h3>Mesh Runners</h3>
+  <p>Brown knit mesh.</p>
+  <div class="price">Rs 1,299</div>
+</div>
+
+<div class="product-card">
+  <img src="image/c12.avif"
+  onclick="openProduct('Neo Trainers','Grey with orange accents.','1699','footwear','image/c12.avif')">
+  <h3>Neo Trainers</h3>
+  <p>Grey & orange accents.</p>
+  <div class="price">Rs 1,699</div>
+</div>
+
+<div class="product-card">
+  <img src="image/c5.jpg"
+    onclick="openProduct('Olive Green Casuals','Trendy olive green sneakers with a durable white sole.','1249','footwear','image/c5.jpg')">
+  <h3>Olive Green Casuals</h3>
+  <p>Trendy olive green sneakers with a durable white sole.</p>
+  <div class="price">Rs 1,249</div>
+</div>
+
+<div class="product-card">
+  <img src="image/c11.jpg"
+  onclick="openProduct('Black Casual Lace-ups','Black sneakers with olive accents.','1499','footwear','image/c11.jpg')">
+  <h3>Black Casual Lace-ups</h3>
+  <p>Black sneakers with olive accents.</p>
+  <div class="price">Rs 1,499</div>
+</div>
+
+<div class="product-card">
+  <img src="image/c7.avif"
+       onclick="openProduct('Pearl Ribbon Low-Tops','White premium sneakers featuring satin ribbon laces and hand-placed pearl accents.','2499','footwear','image/c7.avif')">
+  <h3>Pearl Ribbon Low-Tops</h3>
+  <p>White sneakers with satin ribbons and pearls.</p>
+  <div class="price">Rs 2,499</div>
+</div>
+
+<div class="product-card">
+  <img src="image/c8.avif"
+       onclick="openProduct('Blush Suede Classics','Soft pink suede sneakers with a classic silhouette and white platform sole.','1899','footwear','image/c8.avif')">
+  <h3>Blush Suede Classics</h3>
+  <p>Monochromatic pink suede with platform soles.</p>
+  <div class="price">Rs 1,899</div>
+</div>
+
+<div class="product-card">
+  <img src="image/c10.webp"
+  onclick="openProduct('Rose Gold Glitter Flats','Toe-ring sandals with glitter straps.','699','footwear','image/c10.webp')">
+  <h3>Rose Gold Glitter Flats</h3>
+  <p>Toe-ring sandals with glitter straps.</p>
+  <div class="price">Rs 699</div>
+</div>
+
+<div class="product-card">
+  <img src="image/c6.avif"
+  onclick="openProduct('Gold Lightning Sneakers','White sneakers with gold lightning accents.','1499','footwear','image/c6.avif')">
+  <h3>Gold Lightning Sneakers</h3>
+  <p>White sneakers with gold lightning accents.</p>
+  <div class="price">Rs 1,499</div>
+</div>
+
+</div>
+
+<script>
+function openProduct(name, desc, price, type, image){
+  const url =
+    "product.html" +
+    "?name="  + encodeURIComponent(name) +
+    "&desc="  + encodeURIComponent(desc) +
+    "&price=" + price +
+    "&type="  + type +
+    "&image=" + image;
+
+  window.location.href = url;
+}
+
+function buyNow(product){
+  window.location.href = "Summary.html";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Women's Sandal</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+body{
+  background:#f6f6f6;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+  url("image/F1 back.jpg") center/cover no-repeat;
+  color:#fff;
+  padding:100px 30px;
+  text-align:center;
+}
+header h1{
+  font-family:'Monotype Corsiva';
+  font-size:48px;
+}
+
+/* PRODUCTS */
+.products{
+  max-width:1300px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:20px;
+}
+
+.product-card{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+  text-align:center;
+  transition:.3s;
+}
+
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+  cursor:pointer;
+}
+
+.product-card h3{
+  margin:10px 0;
+}
+
+.price{
+  color:#e91e63;
+  font-size:18px;
+  font-weight:bold;
+  margin:8px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Women's Sandal</h1>
+</header>
+
+<!-- PRODUCTS -->
+<div class="products">
+
+<div class="product-card">
+  <img src="image/ss.jpg"
+    onclick="openProduct(
+      'Women’s Beige Block Heel Sandals',
+      'Comfortable block heels for daily and party wear.',
+      '1999',
+      'footwear',
+      'image/ss.jpg'
+    )">
+  <h3>Women’s Beige Block Heel Sandals</h3>
+  <p>Comfortable block heels for daily and party wear.</p>
+  <div class="price">Rs 1,999</div>
+</div>
+
+<div class="product-card">
+  <img src="image/sc13.avif"
+    onclick="openProduct(
+      'Women’s White Platform Wedge Sandals',
+      'Elegant white platform wedge sandals with ankle strap, perfect for casual and party wear.',
+      '2499',
+      'footwear',
+      'image/sc13.avif'
+    )">
+  <h3>Women’s White Platform Wedge Sandals</h3>
+  <p>Elegant white platform wedge sandals with ankle strap, perfect for casual and party wear.</p>
+  <div class="price">Rs 2,499</div>
+</div>
+
+<div class="product-card">
+  <img src="image/sg11.jpg"
+    onclick="openProduct(
+      'Women’s Gold Embellished Wedge Sandals',
+      'Stylish embellished wedge sandals for festive and party wear.',
+      '2199',
+      'footwear',
+      'image/sg11.jpg'
+    )">
+  <h3>Women’s Gold Embellished Wedge Sandals</h3>
+  <p>Stylish embellished wedge sandals for festive and party wear.</p>
+  <div class="price">Rs 2,199</div>
+</div>
+
+<div class="product-card">
+  <img src="image/sh14.jpg"
+    onclick="openProduct(
+      'Women’s Glitter Bow Wedge Sandals',
+      'Stylish glitter wedge sandals with cute bow detail, perfect for parties and festive wear.',
+      '2699',
+      'footwear',
+      'image/sh14.jpg'
+    )">
+  <h3>Women’s Glitter Bow Wedge Sandals</h3>
+  <p>Stylish glitter wedge sandals with cute bow detail, perfect for parties and festive wear.</p>
+  <div class="price">Rs 2,699</div>
+</div>
+
+<div class="product-card">
+  <img src="image/ss7.jpg"
+    onclick="openProduct(
+      'Women’s Beige Embellished Flat Sandals',
+      'Stylish embellished flats for daily and festive wear.',
+      '1499',
+      'footwear',
+      'image/ss7.jpg'
+    )">
+  <h3>Women’s Beige Embellished Flat Sandals</h3>
+  <p>Stylish embellished flats for daily and festive wear.</p>
+  <div class="price">Rs 1,499</div>
+</div>
+
+<div class="product-card">
+  <img src="image/shw1.jpg"
+    onclick="openProduct(
+      'Women’s White Braided Flat Sandals',
+      'Lightweight braided flats for summer and casual wear.',
+      '1299',
+      'footwear',
+      'image/shw1.jpg'
+    )">
+  <h3>Women’s White Braided Flat Sandals</h3>
+  <p>Lightweight braided flats for summer and casual wear.</p>
+  <div class="price">Rs 1,299</div>
+</div>
+
+<div class="product-card">
+  <img src="image/sh9.jpg"
+    onclick="openProduct(
+      'Women’s Pink Comfort Strap Sandals',
+      'Soft cushioned sandals for all-day comfort and daily wear.',
+      '1799',
+      'footwear',
+      'image/sh9.jpg'
+    )">
+  <h3>Women’s Pink Comfort Strap Sandals</h3>
+  <p>Soft cushioned sandals for all-day comfort and daily wear.</p>
+  <div class="price">Rs 1,799</div>
+</div>
+
+<div class="product-card">
+  <img src="image/sandw2.jpg"
+    onclick="openProduct(
+      'Women Black Strap Sandals',
+      'Elegant black strap sandals with low heel and stylish metal toe ring design, perfect for casual and party wear.',
+      '799',
+      'footwear',
+      'image/sandw2.jpg'
+    )">
+  <h3>Women Black Strap Sandals</h3>
+  <p>Elegant black strap sandals with stylish low heel.</p>
+  <div class="price">Rs 799</div>
+</div>
+
+</div>
+
+<script>
+function openProduct(name, desc, price, type, image){
+  const url =
+    "product.html" +
+    "?name="  + encodeURIComponent(name) +
+    "&desc="  + encodeURIComponent(desc) +
+    "&price=" + price +
+    "&type="  + type +
+    "&image=" + image;
+
+  window.location.href = url;
+}
+
+function buyNow(product){
+  window.location.href = "Summary.html";
+}
+</script>
+
+</body>
+</html>

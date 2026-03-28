@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Confirmation</title>
+
+  <style>
+    body { font-family: 'Segoe UI'; background: #f4f6f8; margin: 0; padding: 20px; }
+    .container { max-width: 700px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .header-success { text-align: center; margin-bottom: 30px; }
+    .header-success i { font-size: 50px; color: #28a745; margin-bottom: 10px; }
+    h1 { color: #28a745; margin: 0; }
+
+    .order-info { text-align: center; background: #e9f7ef; padding: 15px; border-radius: 8px; margin-bottom: 25px; }
+
+    .section { margin-top: 25px; }
+    .section h3 { border-bottom: 2px solid #f0f0f0; padding-bottom: 8px; }
+
+    .address-box { background: #f9f9f9; padding: 15px; border-radius: 8px; line-height: 1.6; }
+
+    .product { display: flex; align-items: center; gap: 20px; padding: 15px 0; border-bottom: 1px solid #eee; }
+    .product img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; }
+
+    .total-section { text-align: right; font-size: 22px; margin-top: 20px; font-weight: bold; }
+
+    .btn-home {
+      display: block;
+      width: 200px;
+      margin: 30px auto 0;
+      padding: 12px;
+      background: #e91e63;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+    }
+
+    .btn-home:hover {
+      background: #c2185b;
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header-success">
+    <i class="fas fa-check-circle"></i>
+    <h1>Order Confirmed!</h1>
+    <p>Thank you for shopping with Shree Footwear and Clothing Delivery System.</p>
+  </div>
+
+  <div class="order-info">
+    <p>Order ID: <strong id="orderId">Loading...</strong></p>
+    <p>A confirmation message has been recorded.</p>
+  </div>
+
+  <div class="section">
+    <h3>Delivery Details</h3>
+    <div id="deliveryAddress" class="address-box">Loading...</div>
+  </div>
+
+  <div class="section">
+    <h3>Summary</h3>
+    <div id="orderItems"></div>
+  </div>
+
+  <div class="total-section">
+    Total Paid: ₹<span id="totalPrice">0</span>
+  </div>
+
+  <a href="Homepage.html" class="btn-home">Go to Home</a>
+
+</div>
+
+<script>
+
+window.onload = function() {
+
+  // ORDER ID
+  const orderId = localStorage.getItem("lastOrderId");
+
+  document.getElementById("orderId").innerText =
+    orderId && orderId !== "undefined" ? orderId : "Order Not Found";
+
+
+  // ADDRESS
+  const address = JSON.parse(localStorage.getItem("deliveryAddress"));
+
+  if (address) {
+    document.getElementById("deliveryAddress").innerHTML = `
+      <strong>${address.name}</strong><br>
+      Phone: ${address.phone}<br>
+      Status: Payment Verified
+    `;
+  }
+
+
+  // ITEMS
+  const items = JSON.parse(localStorage.getItem("confirmedOrderItems")) || [];
+  const itemsDiv = document.getElementById("orderItems");
+
+  let total = 0;
+
+  if (items.length > 0) {
+
+    items.forEach(item => {
+      let qty = parseInt(item.quantity) || 1;
+      let price = parseFloat(item.price) || 0;
+      let sub = price * qty;
+
+      total += sub;
+
+      itemsDiv.innerHTML += `
+        <div class="product">
+          <img src="${item.image}">
+          <div>
+            <p><strong>${item.name}</strong></p>
+            <p>Size: ${item.size || 'N/A'} | Qty: ${qty}</p>
+            <p>₹${price.toFixed(2)}</p>
+          </div>
+        </div>
+      `;
+    });
+
+  } else {
+    itemsDiv.innerHTML = "<p>No item details found.</p>";
+  }
+
+  document.getElementById("totalPrice").innerText = total.toFixed(2);
+
+};
+
+</script>
+
+</body>
+</html>

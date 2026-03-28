@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Women's Kolapuri Chappal</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+body{
+  background:#f6f6f6;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+  url("image/F1 back.jpg") center/cover no-repeat;
+  color:#fff;
+  padding:100px 30px;
+  text-align:center;
+}
+header h1{
+  font-family:'Monotype Corsiva';
+  font-size:48px;
+}
+
+/* PRODUCTS */
+.products{
+  max-width:1300px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:20px;
+}
+
+.product-card{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+  text-align:center;
+  transition:.3s;
+}
+
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+  cursor:pointer;
+}
+
+.product-card h3{
+  margin:10px 0;
+}
+
+.price{
+  color:#e91e63;
+  font-size:18px;
+  font-weight:bold;
+  margin:8px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Women's Kolapuri Chappal</h1>
+</header>
+
+<!-- PRODUCTS -->
+<div class="products">
+
+  <!-- Product 1 -->
+<div class="product-card">
+  <img src="image/kolw7.jpg" 
+    onclick="openProduct(
+      'Pearl & Leaf Motif Flats', 
+      'Exquisite white flats featuring delicate pearl clusters and black leaf embroidery.', 
+      '1199', 
+      'footwear', 
+      'image/kolw7.jpg'
+    )">
+  <h3>Pearl & Leaf Motif Flats</h3>
+  <p>Exquisite white flats featuring delicate pearl clusters and black leaf embroidery.</p>
+  <div class="price">Rs 1,199</div> 
+</div>
+
+  <!-- Product 2 -->
+  <div class="product-card">
+    <img src="image/kolw11.jpg"
+      onclick="openProduct(
+        'Beige Braided Comfort Heels',
+        'Stylish braided strap heels for daily comfort.',
+        '999',
+        'footwear',
+        'image/kolw11.jpg'
+      )">
+    <h3>Beige Braided Comfort Heels</h3>
+    <p>Stylish braided strap heels.</p>
+    <div class="price">Rs 999</div>
+  </div>
+
+  <!-- Product 3 -->
+  <div class="product-card">
+    <img src="image/kolw10.jpg"
+      onclick="openProduct(
+        'Ethnic Designer Slip-ons',
+        'Elegant ethnic slip-ons with decorative strap.',
+        '899',
+        'footwear',
+        'image/kolw10.jpg'
+      )">
+    <h3>Ethnic Designer Slip-ons</h3>
+    <p>Elegant ethnic slip-ons.</p>
+    <div class="price">Rs 899</div>
+  </div>
+
+  <!-- Product 4 -->
+<div class="product-card">
+  <img src="image/kolw6.avif" 
+    onclick="openProduct(
+      'Classic Tan Textured Kolhapuri', 
+      'Timeless tan leather with a sophisticated micro-braid texture on the straps.', 
+      '850', 
+      'footwear', 
+      'image/kolw6.avif'
+    )">
+  <h3>Classic Tan Textured Kolhapuri</h3>
+  <p>Timeless tan leather with a sophisticated micro-braid texture on the straps.</p>
+  <div class="price">Rs 850</div> 
+</div>
+
+ <div class="product-card">
+   <img src="image/kolw16.jpg" 
+     onclick="openProduct(
+      'Multi-Color Braided Kolhapuri', 
+      'Vibrant braided strap with gold sequin detailing.', 
+      '899', 
+      'footwear', 
+      'image/kolw16.jpg'
+    )">
+  <h3>Multi-Color Braided Kolhapuri</h3>
+  <p>Vibrant braided strap with gold sequin detailing.</p>
+  <div class="price">Rs 899</div> 
+ </div>
+
+ <div class="product-card">
+  <img src="image/kolw15.jpg" 
+    onclick="openProduct(
+      'Black Pearl Mosaic Flats', 
+      'Intricate pearl and gold beadwork on premium black base.', 
+      '1299', 
+      'footwear', 
+      'image/kolw15.jpg'
+    )">
+  <h3>Black Pearl Mosaic Flats</h3>
+  <p>Intricate pearl and gold beadwork on premium black base.</p>
+  <div class="price">Rs 1,299</div> 
+ </div>
+
+ <div class="product-card">
+  <img src="image/kolw14.jpg" 
+    onclick="openProduct(
+      'Royal Navy Velvet Flats', 
+      'Luxurious navy velvet with floral zari embroidery.', 
+      '1150', 
+      'footwear', 
+      'image/kolw14.jpg'
+    )">
+  <h3>Royal Navy Velvet Flats</h3>
+  <p>Luxurious navy velvet with floral zari embroidery.</p>
+  <div class="price">Rs 1,150</div> 
+</div>
+
+ <div class="product-card">
+  <img src="image/kolw13.jpg" 
+    onclick="openProduct(
+      'Mustard Medallion Flats', 
+      'Bright mustard straps featuring circular stone medallions.', 
+      '950', 
+      'footwear', 
+      'image/kolw13.jpg'
+    )">
+  <h3>Mustard Medallion Flats</h3>
+  <p>Bright mustard straps featuring circular stone medallions.</p>
+  <div class="price">Rs 950</div> 
+ </div>
+
+ <div class="product-card">
+  <img src="image/kolw12.jpg" 
+    onclick="openProduct(
+      'Ethnic Paithani Flats', 
+      'Traditional woven silk border pattern on a classic beige base.', 
+      '799', 
+      'footwear', 
+      'image/kolw12.jpg'
+    )">
+  <h3>Ethnic Paithani Flats</h3>
+  <p>Traditional woven silk border pattern on a classic beige base.</p>
+  <div class="price">Rs 799</div> 
+ </div>
+
+ <div class="product-card">
+  <img src="image/kolw8.jpg" 
+    onclick="openProduct(
+      'Sparkling Rhinestone Sliders', 
+      'Minimalist nude sliders adorned with a dense rhinestone-encrusted strap.', 
+      '1100', 
+      'footwear', 
+      'image/kolw8.jpg'
+    )">
+  <h3>Sparkling Rhinestone Sliders</h3>
+  <p>Minimalist nude sliders adorned with a dense rhinestone-encrusted strap.</p>
+  <div class="price">Rs 1,100</div> 
+ </div>
+
+ <div class="product-card">
+  <img src="image/kolw5.webp" 
+    onclick="openProduct(
+      'Golden Zari Black Flats', 
+      'Classic black base with a regal gold zari-woven wide strap.', 
+      '899', 
+      'footwear', 
+      'image/kolw5.webp'
+    )">
+  <h3>Golden Zari Black Flats</h3>
+  <p>Classic black base with a regal gold zari-woven wide strap.</p>
+  <div class="price">Rs 899</div> 
+ </div>
+
+ <div class="product-card">
+  <img src="image/kolw9.jpg" 
+    onclick="openProduct(
+      'Shimmering Silver Sleek Sandals', 
+      'Minimalist silver straps with fine glitter finish for a modern look.', 
+      '1050', 
+      'footwear', 
+      image/'kolw9.jpg'
+    )">
+  <h3>Shimmering Silver Sleek Sandals</h3>
+  <p>Minimalist silver straps with fine glitter finish for a modern look.</p>
+  <div class="price">Rs 1,050</div> 
+ </div>
+
+</div>
+
+<script>
+/* SAME FUNCTION AS HOME PAGE */
+function openProduct(name, desc, price, type, image){
+  const url =
+    "product.html" +
+    "?name="  + encodeURIComponent(name) +
+    "&desc="  + encodeURIComponent(desc) +
+    "&price=" + price +
+    "&type="  + type +
+    "&image=" + image;
+
+  window.location.href = url;
+}
+function buyNow(product){
+  window.location.href = "Summary.html";
+}
+</script>
+
+</body>
+</html>

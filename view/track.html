@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Track Order</title>
+
+<style>
+body{
+  font-family:Segoe UI;
+  background:#f6f6f6;
+  padding:30px;
+}
+
+h2{
+  margin-bottom:20px;
+}
+
+.order-box{
+  background:#fff;
+  padding:20px;
+  margin-bottom:20px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.order-id{
+  font-weight:bold;
+}
+
+.status{
+  margin-top:10px;
+  font-weight:bold;
+}
+
+/* Timeline */
+.timeline{
+  margin-top:20px;
+}
+
+.step{
+  display:flex;
+  align-items:center;
+  margin-bottom:10px;
+}
+
+.circle{
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:#ccc;
+  margin-right:10px;
+}
+
+.active{
+  background:green;
+}
+
+.line{
+  width:2px;
+  height:20px;
+  background:#ccc;
+  margin-left:9px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Track Your Orders</h2>
+
+<div id="orders"></div>
+
+<script>
+
+  function cancelOrder(orderId){
+
+  if(!confirm("Are you sure you want to cancel this order?")) return;
+
+  fetch("http://localhost:2000/api/order/" + orderId, {
+    method: "DELETE"
+  })
+  .then(res => res.json())
+  .then(data => {
+    alert("Order Cancelled Successfully");
+    loadOrders(); // refresh
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Error cancelling order");
+  });
+
+}
+
+// 🔷 LOAD ORDERS FROM BACKEND
+function loadOrders(){
+
+  const email = localStorage.getItem("userEmail");
+
+  if(!email){
+    document.getElementById("orders").innerHTML = "<p>Please login first</p>";
+    return;
+  }
+
+  fetch("http://localhost:2000/api/orders/" + email)
+  .then(res => res.json())
+  .then(orders => {
+
+    const container = document.getElementById("orders");
+    container.innerHTML = "";
+
+    if(orders.length === 0){
+      container.innerHTML = "<p>No orders found</p>";
+      return;
+    }
+
+    orders.forEach(order => {
+
+      // 🔷 Calculate dates safely
+      const created = new Date(order.createdAt);
+      const delivery = new Date(created);
+      delivery.setDate(created.getDate() + 5);
+
+container.innerHTML += `
+  <div class="order-box">
+    
+    <div class="order-id">Order ID: ${order.orderId}</div>
+
+    <p>Status: <b>${order.status}</b></p>
+    <p>Payment: ${order.payment}</p>
+
+    <p>Order Date: ${created.toLocaleDateString()}</p>
+    <p>Expected Delivery: ${delivery.toLocaleDateString()}</p>
+
+    <div class="timeline">
+      ${timelineStep(order.status, "Placed")}
+      ${timelineStep(order.status, "Shipped")}
+      ${timelineStep(order.status, "Out for Delivery")}
+      ${timelineStep(order.status, "Delivered")}
+    </div>
+
+    ${
+      order.status === "Placed" || order.status === "Shipped"
+      ? `<button onclick="cancelOrder('${order.orderId}')" style="background:red;color:white;padding:8px 12px;border:none;border-radius:5px;cursor:pointer;margin-top:10px;">
+           Cancel Order
+         </button>`
+      : `<p style="color:gray;margin-top:10px;">Cannot cancel</p>`
+    }
+
+  </div>
+
+      `;
+
+    });
+
+  })
+  .catch(err => {
+    console.error(err);
+    document.getElementById("orders").innerHTML = "<p>Error loading orders</p>";
+  });
+
+}
+
+
+// 🔷 TIMELINE STEP UI
+function timelineStep(current, step){
+
+  const steps = ["Placed","Shipped","Out for Delivery","Delivered"];
+  const active = steps.indexOf(current) >= steps.indexOf(step);
+
+  return `
+    <div class="step">
+      <div class="circle ${active ? 'active' : ''}"></div>
+      <div>${step}</div>
+    </div>
+    <div class="line"></div>
+  `;
+}
+
+
+// 🔷 LOAD ON PAGE OPEN
+loadOrders();
+
+// 🔷 AUTO REFRESH EVERY 10 SEC (to reflect backend changes)
+setInterval(loadOrders, 10000);
+
+</script>
+
+</body>
+</html>

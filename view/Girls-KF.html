@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Girls Shoes</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+body{
+  background:#f6f6f6;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+  url("image/F1 back.jpg") center/cover no-repeat;
+  color:#fff;
+  padding:100px 30px;
+  text-align:center;
+}
+header h1{
+  font-family:'Monotype Corsiva';
+  font-size:48px;
+}
+
+/* PRODUCTS */
+.products{
+  max-width:1300px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:20px;
+}
+
+.product-card{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+  text-align:center;
+  transition:.3s;
+}
+
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+  cursor:pointer;
+}
+
+.product-card h3{
+  margin:10px 0;
+}
+
+.price{
+  color:#e91e63;
+  font-size:18px;
+  font-weight:bold;
+  margin:8px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Girls Shoes</h1>
+</header>
+
+<div class="products">
+
+<div class="product-card">
+  <img src="image/s20.webp"
+    onclick="openProduct('Black Bow Crystal Girls Shoes','Glossy party shoes.','899','footwear','image/s20.webp')">
+  <h3>Black Bow Crystal Girls Shoes</h3>
+  <p>Glossy party shoes.</p>
+  <div class="price">Rs 899</div>
+</div>
+
+<div class="product-card">
+  <img src="image/s21.avif"
+    onclick="openProduct('Black Bow Girls Party Shoes','Stylish party shoes.','879','footwear','image/s21.avif')">
+  <h3>Black Bow Girls Party Shoes</h3>
+  <p>Stylish party shoes.</p>
+  <div class="price">Rs 879</div>
+</div>
+
+<div class="product-card">
+  <img src="image/sg4.jpg"
+    onclick="openProduct('Classic Black Mary Jane Shoes','Elegant glossy shoes for everyday wear.','1299','footwear','image/sg4.jpg')">
+  <h3>Classic Black Mary Jane Shoes</h3>
+  <p>Elegant glossy shoes for everyday wear.</p>
+  <div class="price">Rs 1,299</div>
+</div>
+
+<div class="product-card">
+  <img src="image/sh5.jpg"
+    onclick="openProduct('Black Bow Mary Jane Shoes','Cute bow shoes for daily wear.','1199','footwear','image/sh5.jpg')">
+  <h3>Black Bow Mary Jane Shoes</h3>
+  <p>Cute bow shoes for daily wear.</p>
+  <div class="price">Rs 1,199</div>
+</div>
+
+<div class="product-card">
+  <img src="image/ssw7.webp"
+    onclick="openProduct('Black Chain Chunky Loafers','Stylish chunky loafers with gold chain.','1799','footwear','image/ssw7.webp')">
+  <h3>Black Chain Chunky Loafers</h3>
+  <p>Stylish chunky loafers with gold chain.</p>
+  <div class="price">Rs 1,799</div>
+</div>
+
+<div class="product-card">
+  <img src="image/sw8.jpg"
+    onclick="openProduct('Black Flower Girls Shoes','Elegant party shoes.','749','footwear','image/sw8.jpg')">
+  <h3>Black Flower Girls Shoes</h3>
+  <p>Elegant party shoes.</p>
+  <div class="price">Rs 749</div>
+</div>
+
+<div class="product-card">
+  <img src="image/sg18.jpg"
+    onclick="openProduct('Black School Girls Shoes','Comfortable school shoes.','799','footwear','image/sg18.jpg')">
+  <h3>Black School Girls Shoes</h3>
+  <p>Comfortable school shoes.</p>
+  <div class="price">Rs 799</div>
+</div>
+
+<div class="product-card">
+  <img src="image/s19.jpg"
+    onclick="openProduct('Black Buckle Girls School Shoes','Durable school shoes.','849','footwear','image/s19.jpg')">
+  <h3>Black Buckle Girls School Shoes</h3>
+  <p>Durable school shoes.</p>
+  <div class="price">Rs 849</div>
+</div>
+
+</div>
+
+<script>
+function openProduct(name, desc, price, type, image){
+  const url =
+    "product.html" +
+    "?name="  + encodeURIComponent(name) +
+    "&desc="  + encodeURIComponent(desc) +
+    "&price=" + price +
+    "&type="  + type +
+    "&image=" + image;
+
+  window.location.href = url;
+}
+
+function buyNow(product){
+  window.location.href = "Summary.html";
+}
+</script>
+
+</body>
+</html>

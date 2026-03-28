@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Men's Hand Gloves </title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+body{
+  background:#f6f6f6;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+  url("image/F1 back.jpg") center/cover no-repeat;
+  color:#fff;
+  padding:100px 30px;
+  text-align:center;
+}
+header h1{
+  font-family:'Monotype Corsiva';
+  font-size:48px;
+}
+
+/* PRODUCTS */
+.products{
+  max-width:1300px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:20px;
+}
+
+.product-card{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+  text-align:center;
+  transition:.3s;
+}
+
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+  cursor:pointer;
+}
+
+.product-card h3{
+  margin:10px 0;
+}
+
+.price{
+  color:#e91e63;
+  font-size:18px;
+  font-weight:bold;
+  margin:8px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Men's Hand Gloves</h1>
+</header>
+
+<div class="products">
+
+<div class="product-card">
+  <img src="image/hd2.webp"
+     onclick="openProduct('Half Finger Cycling Gloves','MozFit Anti-Slip Outdoor Professional Road Bike Bicycle Half Finger Cycling Gloves Riding Gloves','180.99','gloves','image/hd2.webp')">
+  <h3>Half Finger Cycling Gloves</h3>
+  <p>MozFit Anti-Slip Outdoor Professional Road Bike Bicycle Half Finger Cycling Gloves Riding Gloves</p>
+  <div class="price">Rs 180.99</div>
+</div>
+
+<div class="product-card">
+  <img src="image/hd4.webp"
+     onclick="openProduct('Gloves for Men Nitrile Safety Gloves','starkyte Cut Resistant Industrial Gloves | Oil & Chemical Safe','157.67','gloves','image/hd4.webp')">
+  <h3>Gloves for Men Nitrile Safety Gloves</h3>
+  <p>starkyte Cut Resistant Industrial Gloves | Oil & Chemical Safe</p>
+  <div class="price">Rs 157.67</div>
+</div>
+
+<div class="product-card">
+  <img src="image/hd3.webp"
+     onclick="openProduct('GJSHOP Dotted Cotton Gloves','Help for Cricket Bating and Full grriping Batting Gloves (Black)','147.91','gloves','image/hd3.webp')">
+  <h3>GJSHOP Dotted Cotton Gloves</h3>
+  <p>Help for Cricket Bating and Full grriping Batting Gloves (Black)</p>
+  <div class="price">Rs 147.91</div>
+</div>
+
+<div class="product-card">
+  <img src="image/hd5.webp"
+     onclick="openProduct('LOOM LEGACY','Solid Winter Men Gloves','137.99','gloves','image/hd5.webp')">
+  <h3>LOOM LEGACY</h3>
+  <p>Solid Winter Men Gloves</p>
+  <div class="price">Rs 137.99</div>
+</div>
+
+<div class="product-card">
+  <img src="image/hd6.webp"
+     onclick="openProduct('Winter Gloves','Self Design Winter Men Gloves','197.90','gloves','image/hd6.webp')">
+  <h3>Winter Gloves</h3>
+  <p>Self Design Winter Men Gloves</p>
+  <div class="price">Rs 197.90</div>
+</div>
+
+<div class="product-card">
+  <img src="image/hd7.webp"
+     onclick="openProduct('Men Gloves','Solid Winter Men Gloves','150.99','gloves','image/hd7.webp')">
+  <h3>Men Gloves</h3>
+  <p>Solid Winter Men Gloves</p>
+  <div class="price">Rs 150.99</div>
+</div>
+
+<div class="product-card">
+  <img src="image/hd8.webp"
+     onclick="openProduct('Men Gloves','Solid Winter Men Gloves','291.99','gloves','image/hd8.webp')">
+  <h3>Men Gloves</h3>
+  <p>Solid Winter Men Gloves</p>
+  <div class="price">Rs 291.99</div>
+</div>
+
+<div class="product-card">
+  <img src="image/hd9.webp"
+     onclick="openProduct('GREEN AGRITECH','Embellished Beanie','169.99','gloves','image/hd9.webp')">
+  <h3>GREEN AGRITECH</h3>
+  <p>Embellished Beanie</p>
+  <div class="price">Rs 169.99</div>
+</div>
+
+</div>
+
+<script>
+function openProduct(name, desc, price, type, image){
+  const url =
+    "product.html" +
+    "?name="  + encodeURIComponent(name) +
+    "&desc="  + encodeURIComponent(desc) +
+    "&price=" + price +
+    "&type="  + type +
+    "&image=" + image;
+
+  window.location.href = url;
+}
+
+function buyNow(product){
+  window.location.href = "Summary.html";
+}
+</script>
+
+</body>
+</html>

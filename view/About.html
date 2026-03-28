@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Us </title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+
+/* PAGE BACKGROUND */
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url("image/F1 back.jpg") center/cover no-repeat;
+}
+
+/* MAIN CONTAINER */
+.about-container{
+  width:100%;
+  max-width:1000px;     /* PAGE SIZE */
+  background:#fff;
+  padding:40px;
+  border-radius:18px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.35);
+}
+
+/* HEADER */
+.about-header{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.about-header h1{
+  font-family:'Monotype Corsiva';
+  font-size:42px;
+}
+
+.about-header p{
+  margin-top:6px;
+  color:#777;
+  font-size:16px;
+}
+
+/* CONTENT ROW */
+.about-content{
+  display:flex;
+  gap:40px;
+  align-items:center;
+  margin-bottom:35px;
+}
+
+/* TEXT */
+.about-text{
+  flex:1.2;
+}
+
+.about-text h2{
+  color:#e91e63;
+  margin-bottom:10px;
+}
+
+.about-text p{
+  color:#555;
+  line-height:1.8;
+  margin-bottom:14px;
+  font-size:15px;
+}
+
+/* IMAGE */
+.about-image{
+  flex:0.8;
+  text-align:center;
+}
+
+.about-image img{
+  width:100%;
+  max-width:320px;      /* IMAGE SIZE */
+  height:auto;
+  border-radius:14px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.3);
+}
+
+/* INFO BOXES */
+.info-boxes{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+  gap:20px;
+}
+
+.info{
+  background:#f8f8f8;
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
+  transition:0.3s;
+}
+
+.info:hover{
+  transform:translateY(-5px);
+}
+
+.info i{
+  font-size:26px;
+  color:#e91e63;
+  margin-bottom:10px;
+}
+
+.info h3{
+  margin-bottom:6px;
+}
+
+.info p{
+  font-size:14px;
+  color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<div class="about-container">
+
+  <!-- HEADER -->
+  <div class="about-header">
+    <h1>About </h1>
+    <p>Where Style Meets Comfort</p>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="about-content">
+
+    <div class="about-text">
+      <h2>Our Story</h2>
+      <p>
+         Shree Footwear and Clothing Delivery System was founded with a simple idea — footwear should look
+        stylish, feel comfortable, and last long. We combine modern fashion
+        trends with premium materials to create shoes that elevate your
+        everyday lifestyle.
+      </p>
+
+      <h2>Our Vision</h2>
+      <p>
+        To become a trusted footwear brand known for innovation, comfort,
+        and quality. We aim to deliver confidence with every step you take.
+      </p>
+
+      <h2>Why Choose Us?</h2>
+      <p>
+        Each pair of StyleStep shoes is designed with attention to detail,
+        ensuring durability, comfort, and style at an affordable price.
+      </p>
+    </div>
+
+    <div class="about-image">
+      <img src="image/f2back.jpg" alt="StyleStep Shoes">
+    </div>
+
+  </div>
+
+  <!-- INFO BOXES -->
+  <div class="info-boxes">
+
+    <div class="info">
+      <i class="fa fa-shoe-prints"></i>
+      <h3>Premium Quality</h3>
+      <p>High-grade materials for durability and long life.</p>
+    </div>
+
+    <div class="info">
+      <i class="fa fa-heart"></i>
+      <h3>Comfort Design</h3>
+      <p>Ergonomic design for all-day comfort.</p>
+    </div>
+
+    <div class="info">
+      <i class="fa fa-star"></i>
+      <h3>Trendy Style</h3>
+      <p>Modern designs for casual and formal wear.</p>
+    </div>
+
+    <div class="info">
+      <i class="fa fa-truck-fast"></i>
+      <h3>Fast Delivery</h3>
+      <p>Quick and reliable delivery across India.</p>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

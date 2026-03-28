@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Girl's Clothing</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+body{
+  background:#f6f6f6;
+}
+
+/* HEADER */
+header{
+  background:#111;
+  color:#fff;
+  padding:30px;
+  text-align:center;
+}
+header h1{
+  font-family:'Monotype Corsiva';
+  font-size:48px;
+}
+
+/* PRODUCTS */
+.products{
+  max-width:1300px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:20px;
+}
+
+.product-card{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+  text-align:center;
+  transition:.3s;
+}
+
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+  cursor:pointer;
+}
+
+.product-card h3{
+  margin:10px 0;
+}
+
+.price{
+  color:#e91e63;
+  font-size:18px;
+  font-weight:bold;
+  margin:8px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Girl's Clothing</h1>
+</header>
+
+<!-- PRODUCTS -->
+<div class="products">
+
+<!-- Product 1 -->
+<div class="product-card">
+    <img src="image/g1.webp"
+      onclick="openProduct(
+        'Girls Cartoon Night Suit Set',
+        'Cute multicolor cartoon printed night suit set for girls',
+        '799.99',
+        'kids',
+        'image/g1.webp'
+      )">
+    <h3>Girls Cartoon Night Suit Set</h3>
+    <p>Cute multicolor cartoon printed night suit set for girls</p>
+    <div class="price">Rs 799.99</div>
+</div>
+
+<!-- Product 2 -->
+<div class="product-card">
+    <img src="image/g2.webp"
+      onclick="openProduct(
+        'Pink Floral Top with Pants',
+        'Soft cotton white top with pink textured pants set',
+        '899.99',
+        'kids',
+        'image/g2.webp'
+      )">
+    <h3>Pink Floral Top with Pants</h3>
+    <p>Soft cotton white top with pink textured pants set</p>
+    <div class="price">Rs 899.99</div>
+</div>
+
+<!-- Product 3 -->
+<div class="product-card">
+    <img src="image/g3.webp"
+      onclick="openProduct(
+        'Blue Party Dress for Girls',
+        'Stylish light blue layered party dress with bow details',
+        '1,099.99',
+        'kids',
+        'image/g3.webp'
+      )">
+    <h3>Blue Party Dress for Girls</h3>
+    <p>Stylish light blue layered party dress with bow details</p>
+    <div class="price">Rs 1,099.99</div>
+</div>
+
+<!-- Product 4 -->
+<div class="product-card">
+    <img src="image/g4.jpg"
+      onclick="openProduct(
+        'Butterfly Happiness Tracksuit',
+        'Cozy pink hoodie and sweatpants set with purple butterfly and daisy graphics',
+        '1,250.00',
+        'kids',
+        'image/g4.jpg'
+      )">
+    <h3>Butterfly Happiness Tracksuit</h3>
+    <p>Cozy pink hoodie and sweatpants set with purple butterfly and daisy graphics</p>
+    <div class="price">Rs 1,250.00</div>
+</div>
+
+<!-- Product 5 -->
+<div class="product-card">
+    <img src="image/g5.jpg"
+      onclick="openProduct(
+        'Dark Green Sweatshirt Set',
+        'Comfortable dark green sweatshirt and jogger set for kids',
+        '1,199.99',
+        'kids',
+        'image/g5.jpg'
+      )">
+    <h3>Dark Green Sweatshirt Set</h3>
+    <p>Comfortable dark green sweatshirt and jogger set for kids</p>
+    <div class="price">Rs 1,199.99</div>
+</div>
+
+<!-- Product 6 -->
+<div class="product-card">
+    <img src="image/g6.jpg"
+      onclick="openProduct(
+        'Daisy Cartoon Summer Set',
+        'Cute daisy printed t-shirt and shorts set for girls',
+        '849.99',
+        'kids',
+        'image/g6.jpg'
+      )">
+    <h3>Daisy Cartoon Summer Set</h3>
+    <p>Cute daisy printed t-shirt and shorts set for girls</p>
+    <div class="price">Rs 849.99</div>
+</div>
+
+<!-- Product 7 -->
+<div class="product-card">
+    <img src="image/g7.webp"
+      onclick="openProduct(
+        'Black Princess Party Gown',
+        'Elegant black layered party gown for girls',
+        '1,999.99',
+        'kids',
+        'image/g7.webp'
+      )">
+    <h3>Black Princess Party Gown</h3>
+    <p>Elegant black layered party gown for girls</p>
+    <div class="price">Rs 1,999.99</div>
+</div>
+
+<!-- Product 8 -->
+<div class="product-card">
+    <img src="image/g8.webp"
+      onclick="openProduct(
+        'Red One Shoulder Party Dress',
+        'Stylish red one shoulder bow party dress for girls',
+        '1,799.99',
+        'kids',
+        'image/g8.webp'
+      )">
+    <h3>Red One Shoulder Party Dress</h3>
+    <p>Stylish red one shoulder bow party dress for girls</p>
+    <div class="price">Rs 1,799.99</div>
+</div>
+
+<!-- Product 9 -->
+<div class="product-card">
+    <img src="image/g9.webp"
+      onclick="openProduct(
+        'Red Glitter Party Dress',
+        'Stylish red one shoulder glitter party dress with bow',
+        '1,699.99',
+        'kids',
+        'image/g9.webp'
+      )">
+    <h3>Red Glitter Party Dress</h3>
+    <p>Stylish red one shoulder glitter party dress with bow</p>
+    <div class="price">Rs 1,699.99</div>
+</div>
+
+<!-- Product 10 -->
+<div class="product-card">
+    <img src="image/g10.jpg"
+      onclick="openProduct(
+        'Purple Princess Dress',
+        'Elegant purple pearl embellished princess dress for girls',
+        '1,899.99',
+        'kids',
+        'image/g10.jpg'
+      )">
+    <h3>Purple Princess Dress</h3>
+    <p>Elegant purple pearl embellished princess dress for girls</p>
+    <div class="price">Rs 1,899.99</div>
+</div>
+
+<div class="product-card">
+    <img src="image/g11.jpg"
+      onclick="openProduct(
+        'Emerald Silk Pattu Pavadai',
+        'Traditional South Indian green and gold silk lehenga set for girls',
+        '2,249.99',
+        'kids',
+        'image/g11.jpg'
+      )">
+    <h3>Emerald Silk Pattu Pavadai</h3>
+    <p>Traditional South Indian green and gold silk lehenga set for girls</p>
+    <div class="price">Rs 2,249.99</div>
+</div>
+
+<div class="product-card">
+    <img src="image/g12.jpg"
+      onclick="openProduct(
+        'Fuchsia Halter Lehenga',
+        'Stylish pink halter neck top with cream and gold pleated skirt',
+        '1,599.99',
+        'kids',
+        'image/g12.jpg'
+      )">
+    <h3>Fuchsia Halter Lehenga</h3>
+    <p>Stylish pink halter neck top with cream and gold pleated skirt</p>
+    <div class="price">Rs 1,599.99</div>
+</div>
+
+<div class="product-card">
+    <img src="image/g13.jpg"
+      onclick="openProduct(
+        'Peacock Blossom Lehenga',
+        'Exquisite cream lehenga featuring a vibrant peacock and floral motif top with purple borders',
+        '2,150.00',
+        'kids',
+        'image/g13.jpg'
+      )">
+    <h3>Peacock Blossom Lehenga</h3>
+    <p>Exquisite cream lehenga featuring a vibrant peacock and floral motif top with purple borders</p>
+    <div class="price">Rs 2,150.00</div>
+</div>
+
+<div class="product-card">
+    <img src="image/g15.jpg"
+      onclick="openProduct(
+        'Emerald Floral Festive Set',
+        'Stunning green silk top with golden floral embroidery paired with a vibrant ruby red skirt',
+        '1,950.00',
+        'kids',
+        'image/g15.jpg'
+      )">
+    <h3>Emerald Floral Festive Set</h3>
+    <p>Stunning green silk top with golden floral embroidery paired with a vibrant ruby red skirt</p>
+    <div class="price">Rs 1,950.00</div>
+</div>
+
+<div class="product-card">
+    <img src="image/g16.jpg"
+      onclick="openProduct(
+        'Scarlet Bow Silk Set',
+        'Elegant red and gold silk ensemble featuring charming bow accents and a contrast panel top',
+        '1,750.00',
+        'kids',
+        'image/g16.jpg'
+      )">
+    <h3>Scarlet Bow Silk Set</h3>
+    <p>Elegant red and gold silk ensemble featuring charming bow accents and a contrast panel top</p>
+    <div class="price">Rs 1,750.00</div>
+</div>
+
+<div class="product-card">
+    <img src="image/g14.jpg"
+      onclick="openProduct(
+        'Safari Friends Jogger Set',
+        'Comfortable multi-color cotton joggers featuring cute dinosaur, giraffe, and lion illustrations',
+        '899.00',
+        'kids',
+        'image/g14.jpg'
+      )">
+    <h3>Safari Friends Jogger Set</h3>
+    <p>Comfortable multi-color cotton joggers featuring cute dinosaur, giraffe, and lion illustrations</p>
+    <div class="price">Rs 899.00</div>
+</div>
+
+<div class="product-card">
+    <img src="image/g17.webp"
+      onclick="openProduct(
+        'Camo Adventure Set',
+        'Durable and stylish grey and black camouflage t-shirt and matching shorts for active play',
+        '950.00',
+        'kids',
+        'image/g17.webp'
+      )">
+    <h3>Camo Adventure Set</h3>
+    <p>Durable and stylish grey and black camouflage t-shirt and matching shorts for active play</p>
+    <div class="price">Rs 950.00</div>
+</div>
+
+</div>
+
+<script>
+function openProduct(name, desc, price, type, image) {
+  // 1. Clean the price (removes "Rs" and commas)
+  const cleanPrice = price.toString().replace(/[^\d.]/g, ''); 
+  
+  // 2. IMPORTANT: Changed 'product.html' to 'Product.html' to match your filename
+  // Also added a leading slash to the image path if it's missing
+  const formattedImage = image.startsWith('http') ? image : '/' + image;
+
+  const url = `Product.html?name=${encodeURIComponent(name)}&desc=${encodeURIComponent(desc)}&price=${cleanPrice}&type=${encodeURIComponent(type)}&image=${encodeURIComponent(image)}`;
+  
+  window.location.href = url;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Boy's Clothing</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+body{
+  background:#f6f6f6;
+}
+
+/* HEADER */
+header{
+  background:#111;
+  color:#fff;
+  padding:30px;
+  text-align:center;
+}
+header h1{
+  font-family:'Monotype Corsiva';
+  font-size:48px;
+}
+
+/* PRODUCTS */
+.products{
+  max-width:1300px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:20px;
+}
+
+.product-card{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+  text-align:center;
+  transition:.3s;
+}
+
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+  cursor:pointer;
+}
+
+.product-card h3{
+  margin:10px 0;
+}
+
+.price{
+  color:#e91e63;
+  font-size:18px;
+  font-weight:bold;
+  margin:8px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Boy's Clothing</h1>
+</header>
+
+<!-- PRODUCTS -->
+<div class="products">
+
+<div class="product-card">
+    <img src="image/boy1.jpg"
+      onclick="openProduct(
+        'Boys Traditional Dhoti Kurta Set',
+        'Elegant cream silk kurta and dhoti paired with a vibrant pink jacquard waistcoat.',
+        '1499.00',
+        'kids',
+        'image/boy1.jpg'
+      )">
+    <h3>Boys Traditional Dhoti Kurta Set</h3>
+    <p>Elegant cream silk kurta and dhoti with pink waistcoat</p>
+    <div class="price">Rs 1499.00</div>
+</div>
+
+<div class="product-card">
+    <img src="image/boy2.webp"
+      onclick="openProduct(
+        'Boys Olive Casual Shirt Set',
+        'Smart olive green mandarin collar shirt with matching dark charcoal trousers.',
+        '999.00',
+        'kids',
+        'image/boy2.webp'
+      )">
+    <h3>Boys Olive Casual Shirt Set</h3>
+    <p>Mandarin collar shirt with comfortable trousers</p>
+    <div class="price">Rs 999.00</div>
+</div>
+
+<div class="product-card">
+    <img src="image/boy3.webp"
+      onclick="openProduct(
+        'Boys Camo Print Sweatshirt Set',
+        'Rugged olive green sweatshirt with stylish camouflage print joggers.',
+        '1199.00',
+        'kids',
+        'image/boy3.webp'
+      )">
+    <h3>Boys Camo Print Sweatshirt Set</h3>
+    <p>Comfortable olive sweatshirt and camo joggers</p>
+    <div class="price">Rs 1199.00</div>
+</div>
+
+<div class="product-card">
+    <img src="image/boy4.webp"
+      onclick="openProduct(
+        'Boys Urban Denim Jacket Set',
+        'Classic navy blue denim jacket with star prints over a white graphic tee and jeans.',
+        '1299.00',
+        'kids',
+        'image/boy4.webp'
+      )">
+    <h3>Boys Urban Denim Jacket Set</h3>
+    <p>Navy denim jacket, graphic tee, and matching jeans</p>
+    <div class="price">Rs 689.00</div>
+</div>
+
+<div class="product-card">
+    <img src="image/boy5.webp"
+      onclick="openProduct(
+        'Boys Sage Plaid Shirt & Jeans Set',
+        'Classic sage green checkered short-sleeve shirt paired with versatile deep indigo denim jeans.',
+        '899.00',
+        'kids',
+        'image/boy5.webp'
+      )">
+    <h3>Boys Sage Plaid Shirt & Jeans Set</h3>
+    <p>Checkered cotton shirt with slim-fit indigo denim</p>
+    <div class="price">Rs 899.00</div>
+</div>
+
+<div class="product-card">
+    <img src="image/boy6.jpg"
+      onclick="openProduct(
+        'Boys Save Forest Hoodie Set',
+        'Comfortable maroon pullover hoodie featuring a forest graphic, paired with black fleece joggers.',
+        '1099.00',
+        'kids',
+        'image/boy6.jpg'
+      )">
+    <h3>Boys Save Forest Hoodie Set</h3>
+    <p>Maroon graphic hoodie and matching black joggers</p>
+    <div class="price">Rs 1099.00</div>
+</div>
+
+<div class="product-card">
+    <img src="image/boy7.jpg"
+      onclick="openProduct(
+        'Boys Paris Eiffel Tower Hoodie',
+        'Stylish grey and black color-block hoodie featuring a striking Eiffel Tower graphic print.',
+        '949.00',
+        'kids',
+        'image/boy7.jpg'
+      )">
+    <h3>Boys Paris Eiffel Tower Hoodie</h3>
+    <p>Contrast sleeve hoodie with urban Paris print</p>
+    <div class="price">Rs 949.00</div>
+</div>
+
+<div class="product-card">
+    <h3>Boys Harry Potter T-Shirt & Shorts Set</h3>
+    <img src="image/boy8.jpg"
+      onclick="openProduct(
+        'Boys Harry Potter T-Shirt & Shorts Set',
+        'Charcoal grey cotton lounge set featuring Harry Potter and Hogwarts Express typography.',
+        '749.00',
+        'kids',
+        'image/boy8.jpg'
+      )">
+    <p>Soft cotton tee and shorts for young wizards</p>
+    <div class="price">Rs 749.00</div>
+</div>
+<div class="product-card">
+    <img src="image/boy9.jpg"
+      onclick="openProduct(
+        'Boys Classic White Ringer Tee',
+        'A clean, breathable white cotton t-shirt featuring stylish black ribbed detailing on the neck and sleeves.',
+        '499.00',
+        'kids',
+        'image/boy9.jpg'
+      )">
+    <h3>Boys Classic White Ringer Tee</h3>
+    <p>Minimalist cotton tee with contrast ribbing</p>
+    <div class="price">Rs 499.00</div>
+</div>
+
+<div class="product-card">
+    <img src="image/boy10.jpg"
+      onclick="openProduct(
+        'Boys USPA Emblem Polo Shirt',
+        'Premium black pique cotton polo shirt featuring a gold embroidered crest and sleeve numbering.',
+        '1299.00',
+        'kids',
+        'image/boy10.jpg'
+      )">
+    <h3>Boys USPA Emblem Polo Shirt</h3>
+    <p>Elegant black polo with gold embroidery</p>
+    <div class="price">Rs 299.00</div>
+</div>
+
+<div class="product-card">
+    <img src="image/boy11.jpg"
+      onclick="openProduct(
+        'Boys Skater & Scooter Tee Pack',
+        'A value pack of two vibrant t-shirts in sky blue and peach, featuring urban skater and scooter graphics.',
+        '899.00',
+        'kids',
+        'image/boy11.jpg'
+      )">
+    <h3>Boys Skater & Scooter Tee Pack</h3>
+    <p>Two-pack of soft cotton graphic t-shirts</p>
+    <div class="price">Rs 899.00</div>
+</div>
+
+<div class="product-card">
+    <img src="image/boy12.jpg"
+      onclick="openProduct(
+        'Boys Dual Cargo Jogger Set',
+        'Set of two durable cargo joggers in charcoal and light grey, featuring elasticated cuffs and utility pockets.',
+        '1399.00',
+        'kids',
+        'image/boy12.jpg'
+      )">
+    <h3>Boys Dual Cargo Jogger Set</h3>
+    <p>Comfortable multi-pocket joggers in two colors</p>
+    <div class="price">Rs 1399.00</div>
+</div>
+<div class="product-card">
+    <img src="image/boy13.jpg"
+      onclick="openProduct(
+        'Boys Distressed Urban Jeans',
+        'Trendy dark wash denim featuring stylish distressed patches and a comfortable relaxed fit.',
+        '1149.00',
+        'kids',
+        'image/boy13.jpg'
+      )">
+    <h3>Boys Distressed Urban Jeans</h3>
+    <p>Relaxed fit dark wash denim with rugged detailing</p>
+    <div class="price">Rs 1149.00</div>
+</div>
+
+<div class="product-card">
+    <img src="image/boy14.jpg"
+      onclick="openProduct(
+        'Boys Safari Friend Denim Joggers',
+        'Playful light wash denim joggers featuring adorable stacked animal graphics and an elasticated waist.',
+        '899.00',
+        'kids',
+        'image/boy14.jpg'
+      )">
+    <h3>Boys Safari Friend Denim Joggers</h3>
+    <p>Comfortable denim with cute animal print</p>
+    <div class="price">Rs 899.00</div>
+</div>
+
+<div class="product-card">
+    <img src="image/boy15.jpg"
+      onclick="openProduct(
+        'Boys Festive Yellow Kurta Set',
+        'Vibrant sunshine yellow kurta and pajama set paired with a matching mirror-work pattern waistcoat.',
+        '1599.00',
+        'kids',
+        'image/boy15.jpg'
+      )">
+    <h3>Boys Festive Yellow Kurta Set</h3>
+    <p>Complete ethnic set perfect for Haldi or festivals</p>
+    <div class="price">Rs 1599.00</div>
+</div>
+
+<div class="product-card">
+    <img src="image/boy16.jpg"
+      onclick="openProduct(
+        'Boys Royal Maroon Sherwani Set',
+        'Deep maroon silk kurta paired with a premium gold brocade waistcoat for a regal look.',
+        '1799.00',
+        'kids',
+        'image/boy16.jpg'
+      )">
+    <h3>Boys Royal Maroon Sherwani Set</h3>
+    <p>Maroon silk kurta with elegant gold brocade vest</p>
+    <div class="price">Rs 1799.00</div>
+</div>
+<div class="product-card">
+    <img src="image/boy17.jpg"
+      onclick="openProduct(
+        'Boys Emerald Heritage Kurta Set',
+        'Sophisticated deep emerald green kurta and trouser set paired with a textured charcoal waistcoat.',
+        '1899.00',
+        'kids',
+        'image/boy17.jpg'
+      )">
+    <h3>Boys Emerald Heritage Kurta Set</h3>
+    <p>Elegant dark green formal set with textured vest</p>
+    <div class="price">Rs 1899.00</div>
+</div>
+
+<div class="product-card">
+    <img src="image/boy18.jpg"
+      onclick="openProduct(
+        'Boys Sage Embroidered Sherwani',
+        'Premium pista green sherwani featuring intricate all-over embroidery and a classic pearl necklace accessory.',
+        '2199.00',
+        'kids',
+        'image/boy18.jpg'
+      )">
+    <h3>Boys Sage Embroidered Sherwani</h3>
+    <p>Luxury embroidered sherwani for special occasions</p>
+    <div class="price">Rs 2199.00</div>
+</div>
+
+<div class="product-card">
+    <img src="image/boy19.jpg"
+      onclick="openProduct(
+        'Boys Sage Textured Resort Shirt',
+        'A lightweight, sage green vertical-textured button-down shirt layered over a classic white tee.',
+        '799.00',
+        'kids',
+        'image/boy19.jpg'
+      )">
+    <h3>Boys Sage Textured Resort Shirt</h3>
+    <p>Breathable textured shirt for a relaxed summer look</p>
+    <div class="price">Rs 799.00</div>
+</div>
+
+<div class="product-card">
+    <img src="image/boy20.webp"
+      onclick="openProduct(
+        'Boys Peace & Fun Sweatshirt Set',
+        'A light grey sweatshirt featuring a feather graphic and PEACE typography, paired with FUN DAY black joggers.',
+        '1199.00',
+        'kids',
+        'image/boy20.webp'
+      )">
+    <h3>Boys Peace & Fun Sweatshirt Set</h3>
+    <p>Graphic sweatshirt and jogger set for casual comfort</p>
+    <div class="price">Rs 1199.00</div>
+</div>
+
+</div>
+
+<script>
+/* SAME FUNCTION AS HOME PAGE */
+function openProduct(name, desc, price, type, image){
+  const url =
+    "product.html" +
+    "?name="  + encodeURIComponent(name) +
+    "&desc="  + encodeURIComponent(desc) +
+    "&price=" + price +
+    "&type="  + type +
+    "&image=" + image;
+
+  window.location.href = url;
+}
+function buyNow(product){
+  window.location.href = "Summary.html";
+}
+</script>
+
+</body>
+</html>

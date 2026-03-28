@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Men's Towel</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+body{
+  background:#f6f6f6;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+  url("image/F1 back.jpg") center/cover no-repeat;
+  color:#fff;
+  padding:100px 30px;
+  text-align:center;
+}
+header h1{
+  font-family:'Monotype Corsiva';
+  font-size:48px;
+}
+
+/* PRODUCTS */
+.products{
+  max-width:1300px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:20px;
+}
+
+.product-card{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+  text-align:center;
+  transition:.3s;
+}
+
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+  cursor:pointer;
+}
+
+.product-card h3{
+  margin:10px 0;
+}
+
+.price{
+  color:#e91e63;
+  font-size:18px;
+  font-weight:bold;
+  margin:8px 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Men's Towel</h1>
+</header>
+
+<div class="products">
+
+  
+  <div class="product-card">
+    <img src="image/tw2.webp"
+      onclick="openProduct(
+        'Towel',
+        'Sffizeex Microfiber 500 GSM Bath Towel',
+        '252.99',
+        'towel',
+        'image/tw2.webp'
+      )">
+    <h3>Towel</h3>
+    <p>Sffizeex Microfiber 500 GSM Bath Towel</p>
+    <div class="price">Rs 252.99</div>
+  </div>
+
+  <!-- PANT 2 -->
+  <div class="product-card">
+    <img src="image/tw3.webp"
+       onclick="openProduct(
+        'Cotton Hand Towe',
+        'HOUSE OF TERRY Cotton 400 GSM Hand Towel Set (Pack of 3)',
+        '300.99',
+        'towel',
+        'image/tw3.webp'
+      )">
+    <h3>Cotton Hand Towe</h3>
+    <p>HOUSE OF TERRY Cotton 400 GSM Hand Towel Set (Pack of 3)</p>
+    <div class="price">Rs 300.99</div>
+  </div>
+
+  <!-- PANT 3 -->
+  <div class="product-card">
+    <img src="image/tw4.webp"
+       onclick="openProduct(
+        'Cotton Towel',
+        ' Cotton 300 GSM Bath, Beach, Hair Towel Set (Pack of 4)',
+        '298.67',
+        'towel',
+        'image/tw4.webp'
+      )">
+    <h3>Cotton Towel</h3>
+    <p>Cotton 300 GSM Bath, Beach, Hair Towel Set (Pack of 4)</p>
+    <div class="price">Rs 298.67</div>
+  </div>
+
+  <!-- PANT 4 -->
+  <div class="product-card">
+    <img src="image/tw5.webp"
+         onclick="openProduct(
+        'G Fabrics Cotton',
+        'G Fabrics Cotton 200 GSM Bath, Beach, Hair, Sport, Face Towel Set (Pack of 4)',
+        '358.91',
+        'towel',
+        'image/tw5.webp'
+      )">
+    <h3>G Fabrics Cotton</h3>
+    <p>G Fabrics Cotton 200 GSM Bath, Beach, Hair, Sport, Face Towel Set (Pack of 4)</p>
+    <div class="price">Rs 358.91</div>
+  </div>
+
+  <!-- PANT 5 -->
+  <div class="product-card">
+    <img src="image/tw6.webp"
+       onclick="openProduct(
+        'Vanilla Cotton Towel',
+        'Vanilla Cotton 550 GSM Hair, Sport, Beach, Bath Towel Set (Pack of 4)',
+        '482.99',
+        'towel',
+        'image/tw6.webp'
+      )">
+    <h3>Vanilla Cotton Towel</h3>
+    <p>Vanilla Cotton 550 GSM Hair, Sport, Beach, Bath Towel Set (Pack of 4)</p>
+    <div class="price">Rs 482.99</div>
+  </div>
+
+   <div class="product-card">
+    <img src="image/tw7.webp"
+       onclick="openProduct(
+        'SOFT NEST Microfiber Towel',
+        'SOFT NEST Microfiber 350 GSM Bath, Hair, Hand Towel Set (Pack of 4)',
+        '398.90',
+        'towel',
+        'image/tw7.webp'
+      )">
+    <h3>SOFT NEST Microfiber</h3>
+    <p>SOFT NEST Microfiber 350 GSM Bath, Hair, Hand Towel Set (Pack of 4)</p>
+    <div class="price">Rs 398.90</div>
+  </div>
+
+   <div class="product-card">
+    <img src="image/tw8.webp"
+       onclick="openProduct(
+        'shegurs Terry Cotton',
+        'shegurs Terry Cotton 300 GSM Hand Towel Set (Pack of 6)',
+        '222.99',
+        'towel',
+        'image/tw8.webp'
+      )">
+    <h3>shegur's Terry Cotton</h3>
+    <p>shegur's Terry Cotton 300 GSM Hand Towel Set (Pack of 6)</p>
+    <div class="price">Rs 222.99</div>
+  </div>
+
+   <div class="product-card">
+    <img src="image/tw9.webp"
+       onclick="openProduct(
+        'JOCKEY Cotton',
+        'JOCKEY Cotton 500 GSM Hand Towel Set (Pack of 2, Grey)',
+        '459.99',
+        'towel',
+        'image/tw9.webp'
+      )">
+    <h3>JOCKEY Cotton</h3>
+    <p>JOCKEY Cotton 500 GSM Hand Towel Set (Pack of 2, Grey)</p>
+    <div class="price">Rs 459.99</div>
+   </div>
+
+</div>
+
+<script>
+/* SAME FUNCTION AS HOME PAGE */
+function openProduct(name, desc, price, type, image){
+  const url =
+    "product.html" +
+    "?name="  + encodeURIComponent(name) +
+    "&desc="  + encodeURIComponent(desc) +
+    "&price=" + price +
+    "&type="  + type +
+    "&image=" + image;
+
+  window.location.href = url;
+}
+function buyNow(product){
+  window.location.href = "Summary.html";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Footwear & Clothing Store</title>
+
+<style>
+*{
+  margin-bottom:50;
+   margin-top:10;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+body{
+  background:#f6f6f6;
+    margin-top: 100px; 
+}
+
+/* HEADER */
+header{
+  position: fixed;          /* 🔥 makes it stay at top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+  url("image/F1-back.jpg") center/cover no-repeat;
+  color:#fff;
+  padding:30px 60px;
+  text-align:center
+}
+
+header h1{
+  font-family:'Monotype Corsiva';
+  font-size:48px;
+  letter-spacing:3px;
+  text-shadow:2px 2px 10px rgba(0,0,0,0.8);
+  
+}
+
+/* Navbar */
+
+.navbar{
+  padding:10px 20px;
+  display:flex;
+  align-items:center;
+  background:rgba(0,0,0,0.3);
+  backdrop-filter: blur(5px);
+}
+.navbar a,
+.navbtn {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: inline-block;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  
+}
+
+/* Hover effect */
+.navbar a:hover,
+.navbtn:hover {
+  background: #555;
+}
+.navbar{
+  background:#333;
+  padding:10px 20px;
+  display:flex;
+  align-items:center;
+}
+
+.nav-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.nav-right{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #f1f1f1;
+  min-width: 150px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background: #ddd;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* MARQUEE */
+.marquee{
+  background:#f4c430;
+  color:#111;
+  font-size:22px;
+  font-weight:bold;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+.marquee span{
+  display:inline-block;
+  padding-left:100%;
+  animation:scroll 10s linear infinite;
+}
+
+@keyframes scroll{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-100%);}
+}
+
+/* PRODUCTS */
+.products{
+  max-width:1300px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:20px
+}
+.product-card{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+  text-align:center;
+   transition:0.3s;
+}
+.product-card img{
+  width:100%;
+  height:200px;        /* FIXED HEIGHT */
+  object-fit:contain; /* NOT cover */
+  background:#fff;
+  border-radius:8px;
+  cursor:pointer;
+}
+.product-card h3{
+  margin:10px 0
+}
+.price{
+  color:#e91e63;
+  font-size:18px;
+  font-weight:bold;
+  margin:8px 0
+}
+.button-group{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+}
+
+button{
+  padding:8px 14px;
+  border:none;
+  border-radius:4px;
+  cursor:pointer;
+  margin:5px
+}
+.buy-btn{
+  background:#e91e63;
+  color:#fff;
+   border:none;
+  padding:8px 14px;
+  cursor:pointer;
+  border-radius:4px;
+}
+.cart-btn{
+  background:#111;
+  color:#fff;
+  border:none;
+  padding:8px 14px;
+  cursor:pointer;
+  border-radius:4px;
+}
+/* FOOTER */
+.site-footer{
+  background:#111;
+  color:#fff;
+  padding:40px 20px 10px;
+}
+
+.footer-container{
+  max-width:1200px;
+  margin:auto;
+  display:flex;                 /* 🔥 HORIZONTAL */
+  justify-content:space-between;
+  flex-wrap:wrap;               /* Responsive */
+  gap:30px;
+}
+
+.footer-section{
+  flex:1;
+  min-width:220px;
+}
+
+.footer-section h4{
+  margin-bottom:12px;
+}
+
+.footer-section p,
+.footer-section ul li a{
+  font-size:14px;
+  color:#ccc;
+}
+
+.footer-section ul{
+  list-style:none;
+  padding:0;
+}
+
+.footer-section ul li{
+  margin-bottom:6px;
+}
+
+.footer-section ul li a{
+  text-decoration:none;
+}
+
+.footer-section ul li a:hover{
+  color:#f4c430;
+}
+
+.footer-bottom{
+  text-align:center;
+  margin-top:30px;
+  border-top:1px solid #333;
+  padding-top:10px;
+  font-size:14px;
+  color:#aaa;
+}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  top:0;left:0;width:100%;
+  height:100%;
+  background:rgba(0,0,0,.6);
+  justify-content:center;
+  align-items:center
+}
+.modal-content{
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  width:350px;
+  text-align:center
+}
+.modal-content img{
+  width:100%;
+  height:220px;
+  object-fit:cover
+}
+select{
+  width:100%;
+  padding:8px;
+  margin:10px 0
+}
+.close{
+  background:red;
+  color:white;
+  width:100%
+}
+
+.product-card{
+  position:relative;
+}
+.profile-container{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.profile-circle{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:#e91e63;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+}
+
+.profile-name{
+  color:white;
+  font-size:15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Shree Footwear & Clothing Delivery System</h1>
+
+
+<nav class="navbar">
+  <a href="indax.html">Home</a>
+  <div class="dropdown">
+    <button class="navbtn">Footwear ▾</button>
+    <div class="dropdown-content">
+      <a href="Mens-footwear.html">Mens</a>
+      <a href="Womens-footwear.html">Womens</a>
+      <a href="Kids-footwear.html">Kids</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="navbtn">Clothing ▾</button>
+    <div class="dropdown-content">
+      <a href="Mens-clothing.html">Mens</a>
+      <a href="Womens-clothing.html">Womens</a>
+      <a href="Kids-clothing.html">Kids</a>
+    </div>
+  </div>
+
+  <a href="About.html">About</a>
+  <a href="Contact.html">Contact</a>
+    <div class="nav-right">
+    <span id="profileMenu"></span>
+    <a href="Cart.html">Cart</a>
+    <a href="track.html">Track Order</a>
+  </div>
+</nav>
+
+</header>
+<div class="marquee">
+  <span>🔥 Free Delivery | 50% OFF on Footwear & Clothing | Shop Now 🔥</span>
+</div>
+
+<!-- PRODUCTS -->
+<div class="products">
+    <div class="product-card">
+     <img src="image/l1.jpg"
+         onclick="openProduct(
+           'Lofar Shoes',
+           'Shop Mens Black Formal Design Buckle Loafer Shoes Online',
+           '500.99',
+           'footwear',
+           'image/l1.jpg'
+         )">
+    <h3>Lofar Shoes</h3>
+    <p>Shop Men's Black Formal Design Buckle Loafer Shoes Online</p>
+    <div class="price">Rs 500.99</div>
+  </div>
+
+
+
+   <div class="product-card">
+    <img src="image/sand1.jpg"
+         onclick="openProduct(
+           'Womens Easy Spirit Sandals',
+           'Womens flat ankle-strap sandals for casual wear',
+           '700.99',
+           'footwear',
+           'image/sand1.jpg'
+         )">
+    <h3>Women's Easy Spirit Sandals</h3>
+    <p>Women’s flat ankle-strap sandals for casual wear.</p>
+    <div class="price">Rs 700.99</div>
+  </div>
+
+
+  <!-- SNEAKERS -->
+
+  <div class="product-card">
+    <img src="image/shoes.jpg"
+         onclick="openProduct(
+           'Sneakers',
+           'White casual sneakers for everyday wear',
+           '1000.99',
+           'footwear',
+           'image/shoes.jpg'
+         )">
+    <h3>Sneakers</h3>
+    <p>White casual sneakers for everyday wear.</p>
+    <div class="price">Rs 1000.99</div>
+  </div>
+
+   
+  <div class="product-card">
+    <img src="image/kolm1.jpg"
+         onclick="openProduct(
+           'Kolhapuri Chappal for Men',
+           'Royal Khwaab Mens Kolhapuri Chappal/Leather Slippers/Ethnic Wear Handcrafted & Comfortable r',
+           '1500.99',
+           'footwear',
+           'image/kolm1.jpg'
+         )">
+    <h3>Kolhapuri Chappal for Men</h3>
+    <p>Royal Khwaab Men's Kolhapuri Chappal/Leather Slipper's/Ethnic Wear Handcrafted & Comfortable .</p>
+    <div class="price">Rs 1500.99</div>
+  </div>
+
+  <div class="product-card">
+    <img src="image/sl.webp"
+         onclick="openProduct(
+           'Grey Slippers',
+           'Denim Grey Slippers for Men – Stylish Comfort for Daily Wear',
+           '200.99',
+           'footwear',
+           'image/sl.webp'
+         )">
+    <h3>Grey Slippers</h3>
+    <p>Denim Grey Slippers for Men – Stylish Comfort for Daily Wear</p>
+    <div class="price">Rs 200.99</div>
+  </div>
+
+  <div class="product-card">
+    <img src="image/kolw1.avif"
+         onclick="openProduct(
+           'Kolhapuri Chappal for Women',
+           'Pure Leather Kolhapuri Flat Chappals for women',
+           '1480.99',
+           'footwear',
+           'image/kolw1.avif'
+         )">
+    <h3>Kolhapuri Chappal for Women</h3>
+    <p>White casual sneakers for everyday wear.</p>
+    <div class="price">Rs 1480.99</div>
+  </div>
+
+  <div class="product-card">
+    <img src="image/sh1.avif"
+         onclick="openProduct(
+           'School Shoes',
+           'Paragon FBK0774K Kids Boys/Girls School Shoes Comfortable',
+           '450.99',
+           'footwear',
+           'image/sh1.avif'
+         )">
+    <h3>School Shoes</h3>
+    <p>Paragon FBK0774K Kids Boys/Girls School Shoes Comfortable.</p>
+    <div class="price">Rs 450.99</div>
+  </div>
+
+  <div class="product-card">
+    <img src="image/sandm.avif"
+         onclick="openProduct(
+           'Strappy Sandals',
+           'Men Strappy Sandals with Velcro Fastening',
+           '800.99',
+           'footwear',
+           'image/sandm.avif'
+         )">
+    <h3>Strappy Sandals</h3>
+    <p>Men Strappy Sandals with Velcro Fastening.</p>
+    <div class="price">Rs 800.99</div>
+  </div>
+
+  <div class="product-card">
+    <img src="image/kw1.jpg"
+         onclick="openProduct(
+           'Kids Sandal',
+           'Kids cute pink sandals',
+           '650.99',
+           'footwear',
+           'image/kw1.jpg'
+         )">
+    <h3>Kids Sandal</h3>
+    <p>Kids cute pink sandals.</p>
+    <div class="price">Rs 650.99</div>
+  </div>
+
+  <div class="product-card">
+    <img src="image/km1.webp"
+         onclick="openProduct(
+           'Kids Sandal',
+           'Buy LEVOT Kids Unisex Sandal|Walking Sandal|Kids Sandal|Boys',
+           '550.99',
+           'footwear',
+           'image/km1.webp'
+         )">
+    <h3>Kids Sandal</h3>
+    <p>Buy LEVOT Kid's Unisex Sandal|Walking Sandal|Kids Sandal|Boys.</p>
+    <div class="price">Rs 550.99</div>
+  </div>
+
+  <div class="product-card">
+    <img src="image\/w3.webp"
+         onclick="openProduct(
+           'Women’s floral sandals',
+           'Women’s floral slip-on sandals for casual comfort',
+           '550.99',
+           'footwear',
+           'image/sw3.webp'
+         )">
+    <h3>Women’s floral sandals</h3>
+    <p>Women’s floral slip-on sandals for casual comfort.</p>
+    <div class="price">Rs 550.99</div>
+  </div>
+
+  <div class="product-card">
+    <img src="image/hd1.avif"
+         onclick="openProduct(
+           'Hand Gloves',
+           'GENERIC 50 GSM Cotton Knitted Hand Gloves for Men & Women Blue',
+           '130.99',
+           'hand-gloves',
+           'image/hd1.avif'
+         )">
+    <h3>Hand Gloves</h3>
+    <p>GENERIC 50 GSM Cotton Knitted Hand Gloves for Men & Women Blue.</p>
+    <div class="price">Rs 130.99</div>
+  </div>
+  
+
+  <div class="product-card">
+    <img src="image/kd.jpg"
+         onclick="openProduct(
+           'Hooded shirt&Pant',
+           'Winter Hooded Sweatshirt Pant Set Full Sleeves Dress for Boys & Girls',
+           '1150.99',
+           'clothing',
+           'image/kd.jpg'
+         )">
+    <h3>Hooded shirt&Pant</h3>
+    <p>Winter Hooded Sweatshirt Pant Set Full Sleeves Dress for Boys & Girls.</p>
+    <div class="price">Rs 1150.99</div>
+  </div>
+  
+
+  <div class="product-card">
+    <img src="image/kd2.webp"
+         onclick="openProduct(
+           'Kids Clothing',
+           'Kids Land Stylish Printed Boys Winter Wear Kids Clothing Sets',
+           '1010.99',
+           'clothing',
+           'image/kd2.webp'
+         )">
+    <h3>Kids Clothing</h3>
+    <p>Kids Land Stylish Printed Boys Winter Wear Kids Clothing Sets.</p>
+    <div class="price">Rs 1010.99</div>
+  </div>
+  
+
+
+  <div class="product-card">
+    <img src="image/pant13.webp"
+         onclick="openProduct(
+           'Mens Pant',
+           'Buy Mens Navy Classic Pant online',
+           '1123.99',
+           'clothing',
+           'image/pant13.webp'
+         )">
+    <h3>Mens Pant</h3>
+    <p>Buy Mens Navy Classic Pant online.</p>
+    <div class="price">Rs 1123.99</div>
+  </div>
+  
+
+  <div class="product-card">
+    <img src="image/srt.jpg"
+         onclick="openProduct(
+           'Mens Shirt',
+           'Buy Light Blue Classic Shirt For Mens Online',
+           '978.99',
+           'clothing',
+           'image/srt.jpg'
+         )">
+    <h3>Men's Shirt</h3>
+    <p>Buy Light Blue Classic Shirt For Men's Online.</p>
+    <div class="price">Rs 978.99</div>
+  </div>
+  
+
+  <div class="product-card">
+    <img src="image/sock.webp"
+         onclick="openProduct(
+           'Socks',
+           'Boys/Girls Navy Plain Ankle Casual Lycra School Socks',
+           '80.99',
+           'socks',
+           'image/sock.webp'
+         )">
+    <h3>Socks</h3>
+    <p>Boys/Girls Navy Plain Ankle Casual Lycra School Socks.</p>
+    <div class="price">Rs 80.99</div>
+  </div>
+  
+
+  <div class="product-card">
+    <img src="image/Cap.jpg"
+         onclick="openProduct(
+           'Curved Cap',
+           'Buy TOP HEADWEAR Blank Fitted Curved Cap Hat,Black',
+           '100.99',
+           'cap',
+           'image/Cap.jpg'
+         )">
+    <h3>Curved Cap</h3>
+    <p>Buy TOP HEADWEAR Blank Fitted Curved Cap Hat,Black.</p>
+    <div class="price">Rs 100.99</div>
+  </div>
+  
+
+  <div class="product-card">
+    <img src="image/twl1.jpg"
+         onclick="openProduct(
+           'Ultra Soft Hand Towels',
+           'Cleanbear Cotton Hand Towel Set 6-Pack Ultra Soft Hand Towels',
+           '999.99',
+           'towel',
+           'image/twl1.jpg'
+         )">
+    <h3>Ultra Soft Hand Towels</h3>
+    <p>Cleanbear Cotton Hand Towel Set 6-Pack Ultra Soft Hand Towels.</p>
+    <div class="price">Rs 999.99</div>
+  </div>
+  
+  <div class="product-card">
+    <img src="image/saree2.jpeg"
+         onclick="openProduct(
+           'Womens Printed Saree',
+           'Womens Elegant Tie-Dye Printed Saree with Contrast Border – Lightweight Casual',
+           '2000.00',
+           'saree',
+           'image/saree2.jpeg'
+         )">
+    <h3>Women's Printed Saree</h3>
+    <p>Women's Elegant Tie-Dye Printed Saree with Contrast Border – Lightweight Casual</p>
+    <div class="price">Rs 2000.00</div>
+  </div>
+  
+</div>
+
+
+<!-- PRODUCT MODAL -->
+<div class="modal" id="productModal">
+  <div class="modal-content">
+    <img id="modalImg">
+    <h3 id="modalTitle"></h3>
+    <p id="modalDesc"></p>
+    <div class="price" id="modalPrice"></div>
+
+    <select id="sizeSelect"></select>
+
+    <button class="buy-btn">Confirm Buy</button>
+    <button class="close" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+
+function loadProfile(){
+
+  const user = localStorage.getItem("username"); // ✅ FIXED
+  const profile = document.getElementById("profileMenu");
+
+  if(!profile) return;
+
+  if(user){
+
+    const firstLetter = user.charAt(0).toUpperCase();
+
+    profile.innerHTML = `
+      <div class="dropdown profile-container">
+
+        <div class="profile-circle">${firstLetter}</div>
+
+        <button class="navbtn profile-name">${user} ▾</button>
+
+        <div class="dropdown-content">
+          <a href="profile.html">My Profile</a>
+          <a href="orders.html">My Orders</a>
+          <a href="#" onclick="logout()">Logout</a>
+        </div>
+
+      </div>
+    `;
+
+  } else {
+
+    profile.innerHTML = `<a href="Login.html">Login</a>`;
+
+  }
+}
+
+// Logout
+function logout(){
+  localStorage.removeItem("userEmail");  // ✅ remove only login session
+  localStorage.removeItem("username"); 
+  alert("Logged out successfully");
+
+  window.location.replace("Homepage.html");   // redirect to login
+}
+
+document.addEventListener("DOMContentLoaded", loadProfile);
+
+</script>
+
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <div class="footer-section">
+      <h4>Shree Footwear and Clothing Delivery System</h4>
+      <p>Your one-stop fashion destination.</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Help Center</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Contact Us</h4>
+      <p>📍 Mumbai, Maharashtra, India</p>
+      <p>📞 +91 98765 43210</p>
+      <p>✉️ support@Shreefootwear&clothingsystem.com</p>
+      <p>🕒 Mon – Sat: 10 AM – 7 PM</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Shree Footwear & Clothing Delivery System | All Rights Reserved
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Us </title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("image/F1 back.jpg") center/cover no-repeat;
+}
+
+.contact-box{
+  background:#fff;
+  width:420px;
+  padding:30px;
+  border-radius:14px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.35);
+}
+
+.contact-box h2{
+  text-align:center;
+  margin-bottom:20px;
+  font-family:'Monotype Corsiva';
+  font-size:36px;
+}
+
+.input-box{
+  position:relative;
+  margin-bottom:15px;
+}
+
+.input-box input,
+.input-box textarea{
+  width:100%;
+  padding:10px 40px;
+  border:1px solid #ccc;
+  border-radius:6px;
+  outline:none;
+  resize:none;
+}
+
+.input-box i{
+  position:absolute;
+  top:12px;
+  left:12px;
+  color:#888;
+}
+
+textarea{
+  height:100px;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  background:#e91e63;
+  border:none;
+  border-radius:6px;
+  color:#fff;
+  font-size:16px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#c2185b;
+}
+
+.contact-info{
+  margin-top:20px;
+  text-align:center;
+  font-size:14px;
+  color:#555;
+}
+
+.contact-info p{
+  margin:5px 0;
+}
+
+.contact-info i{
+  color:#e91e63;
+  margin-right:6px;
+}
+</style>
+</head>
+
+<body>
+<div class="contact-box">
+  <h2>Contact Us</h2>
+
+  <div class="input-box">
+    <i class="fa fa-user"></i>
+    <input type="text" id="contactName" placeholder="Your Name" required>
+  </div>
+
+  <div class="input-box">
+    <i class="fa fa-envelope"></i>
+    <input type="email" id="contactEmail" placeholder="Your Email" required>
+  </div>
+
+  <div class="input-box">
+    <i class="fa fa-phone"></i>
+    <input type="tel" id="contactPhone" placeholder="Phone Number" required>
+  </div>
+
+  <div class="input-box">
+    <i class="fa fa-message"></i>
+    <textarea id="contactMessage" placeholder="Your Message" required></textarea>
+  </div>
+
+  <button onclick="sendMessage()">Send Message</button>
+
+  <div class="contact-info">
+    <p><i class="fa fa-location-dot"></i> Pune, Maharashtra, India</p>
+    <p><i class="fa fa-phone"></i> +91 98765 43210</p>
+    <p><i class="fa fa-envelope"></i> Shree@gmail.com</p>
+  </div>
+</div>
+
+<script>
+async function sendMessage() {
+  const name = document.getElementById("contactName").value;
+  const email = document.getElementById("contactEmail").value;
+  const phone = document.getElementById("contactPhone").value;
+  const message = document.getElementById("contactMessage").value;
+
+  // Basic validation
+  if(!name || !email || !phone || !message) {
+    alert("Please fill in all fields.");
+    return;
+  }
+
+  const contactData = { name, email, phone, message };
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(contactData)
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      alert(result.message);
+      window.location.href = "Homepage.html"; 
+      // Clear the form
+      document.getElementById("contactName").value = "";
+      document.getElementById("contactEmail").value = "";
+      document.getElementById("contactPhone").value = "";
+      document.getElementById("contactMessage").value = "";
+    } else {
+      alert(result.error);
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("An error occurred while connecting to the server.");
+  }
+ 
+}
+
+</script>
+</body>
+</html>
