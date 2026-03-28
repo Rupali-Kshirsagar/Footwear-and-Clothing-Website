@@ -10,7 +10,7 @@ require('dotenv').config();
 const bcrypt = require('bcrypt');
 
 const app = express();
-const PORT = process.env.PORT || 2006;
+const PORT = process.env.PORT || 2000;
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -23,7 +23,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 // ================== ROUTES ==================
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'view', 'Homepage.html'));
+  res.sendFile(path.join(__dirname, 'view', 'index.html'));
 });
 
 // ================== SIGNUP ==================
