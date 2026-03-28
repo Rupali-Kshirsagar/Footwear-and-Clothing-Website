@@ -96,14 +96,14 @@ document.getElementById("avatar").innerText = name ? name.charAt(0).toUpperCase(
 
 // NAVIGATION
 function goHome(){
-  window.location.href = "Homepage.html";
+  window.location.href = "index.html";
 }
 
 function logout(){
  // localStorage.clear();
   localStorage.removeItem("userEmail");
   localStorage.removeItem("username");
-  window.location.replace("Homepage.html");
+  window.location.replace("index.html");
 }
 
 </script>
