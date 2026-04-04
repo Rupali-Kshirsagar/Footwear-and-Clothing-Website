@@ -76,7 +76,7 @@ h2{
 
   if(!confirm("Are you sure you want to cancel this order?")) return;
 
-  fetch("http://localhost:2000/api/order/" + orderId, {
+  fetch("http://localhost:8080/api/order/" + orderId, {
     method: "DELETE"
   })
   .then(res => res.json())
@@ -101,7 +101,7 @@ function loadOrders(){
     return;
   }
 
-  fetch("http://localhost:2000/api/orders/" + email)
+  fetch("http://localhost:8080/api/orders/" + email)
   .then(res => res.json())
   .then(orders => {
 
