@@ -10,7 +10,7 @@ require('dotenv').config();
 const bcrypt = require('bcrypt');
 
 const app = express();
-const PORT = process.env.PORT || 2000;
+const PORT = process.env.PORT || 8080;
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -18,8 +18,17 @@ app.use(express.static('view'));
 
 // ================== DB CONNECT ==================
 mongoose.connect(process.env.MONGO_URI)
-.then(() => console.log("✅ MongoDB connected"))
-.catch(err => console.log("❌ MongoDB Error:", err));
+.then(() => {
+  console.log("✅ MongoDB connected");
+
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running on port ${PORT}`);
+  });
+})
+.catch(err => {
+  console.error("❌ MongoDB connection failed:", err);
+  process.exit(1); // 🔥 crash properly so Railway shows logs
+});
 
 // ================== ROUTES ==================
 app.get('/', (req, res) => {
@@ -304,7 +313,4 @@ setInterval(async () => {
   }
 
 }, 60000); // check every 1 min
-// ================== SERVER ==================
-app.listen(PORT, () => {
-  console.log(`🚀 Running on http://localhost:${PORT}`);
-});
+
