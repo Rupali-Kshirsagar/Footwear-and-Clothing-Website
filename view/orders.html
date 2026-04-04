@@ -106,7 +106,7 @@ if(!email){
 async function loadOrders(){
 
   try{
-    const response = await fetch(`http://localhost:2000/api/orders/${email}`);
+    const response = await fetch(`http://localhost:8080/api/orders/${email}`);
     const orders = await response.json();
 
     const container = document.getElementById("ordersContainer");
@@ -175,7 +175,7 @@ async function clearOrders(){
   }
 
   try{
-    const response = await fetch(`http://localhost:2000/api/orders/${email}`, {
+    const response = await fetch(`http://localhost:8080/api/orders/${email}`, {
       method: "DELETE"
     });
 
