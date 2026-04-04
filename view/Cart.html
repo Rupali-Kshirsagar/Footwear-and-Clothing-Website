@@ -141,7 +141,7 @@ if (!email) {
 
 async function loadCart(){
 
-  const response = await fetch(`http://localhost:2000/api/cart/${email}`);
+  const response = await fetch(`http://localhost:8080/api/cart/${email}`);
   const cart = await response.json();
 
   let container = document.getElementById("cartItems");
@@ -192,7 +192,7 @@ cart.forEach((item, index) => {
 
 async function changeQty(id, change){
 
-  const response = await fetch(`http://localhost:2000/api/cart/${email}`);
+  const response = await fetch(`http://localhost:8080/api/cart/${email}`);
   const cart = await response.json();
 
   const item = cart.find(i => i._id === id);
@@ -201,7 +201,7 @@ async function changeQty(id, change){
 
   if(newQty < 1) return;
 
-  await fetch(`http://localhost:2000/api/cart/${id}`,{
+  await fetch(`http://localhost:8080/api/cart/${id}`,{
     method:"PUT",
     headers:{ "Content-Type":"application/json" },
     body: JSON.stringify({ quantity: newQty })
@@ -212,7 +212,7 @@ async function changeQty(id, change){
 
 async function removeItem(id){
 
-  await fetch(`http://localhost:2000/api/cart/${id}`,{
+  await fetch(`http://localhost:8080/api/cart/${id}`,{
     method:"DELETE"
   });
 
@@ -221,7 +221,7 @@ async function removeItem(id){
 
 async function checkoutAll(){
 
-  const response = await fetch(`http://localhost:2000/api/cart/${email}`);
+  const response = await fetch(`http://localhost:8080/api/cart/${email}`);
   const cart = await response.json();
 
   if(cart.length === 0){
