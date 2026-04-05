@@ -141,7 +141,7 @@ if (!email) {
 
 async function loadCart(){
 
-  const response = await fetch(`http://localhost:8080/api/Cart/${email}`);
+  const response = await fetch(`https://footwear-and-clothing-website-production.up.railway.app/api/Cart/${email}`);
   const cart = await response.json();
 
   let container = document.getElementById("cartItems");
@@ -192,7 +192,7 @@ cart.forEach((item, index) => {
 
 async function changeQty(id, change){
 
-  const response = await fetch(`http://localhost:8080/api/Cart/${email}`);
+  const response = await fetch(`https://footwear-and-clothing-website-production.up.railway.app/api/Cart/${email}`);
   const cart = await response.json();
 
   const item = cart.find(i => i._id === id);
@@ -201,7 +201,7 @@ async function changeQty(id, change){
 
   if(newQty < 1) return;
 
-  await fetch(`http://localhost:8080/api/Cart/${id}`,{
+  await fetch(`https://footwear-and-clothing-website-production.up.railway.app/api/Cart/${id}`,{
     method:"PUT",
     headers:{ "Content-Type":"application/json" },
     body: JSON.stringify({ quantity: newQty })
@@ -212,7 +212,7 @@ async function changeQty(id, change){
 
 async function removeItem(id){
 
-  await fetch(`http://localhost:8080/api/Cart/${id}`,{
+  await fetch(`https://footwear-and-clothing-website-production.up.railway.app/api/Cart/${id}`,{
     method:"DELETE"
   });
 
@@ -221,7 +221,7 @@ async function removeItem(id){
 
 async function checkoutAll(){
 
-  const response = await fetch(`http://localhost:8080/api/Cart/${email}`);
+  const response = await fetch(`https://footwear-and-clothing-website-production.up.railway.app/api/Cart/${email}`);
   const cart = await response.json();
 
   if(cart.length === 0){
