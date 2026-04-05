@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/product.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'view', 'product.html'));
+  res.sendFile(path.join(__dirname, 'view', 'Product.html'));
 });
 
 // ================== SIGNUP ==================
