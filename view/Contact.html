@@ -147,7 +147,7 @@ async function sendMessage() {
   const contactData = { name, email, phone, message };
 
   try {
-    const response = await fetch('/api/contact', {
+    const response = await fetch('/api/Contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
