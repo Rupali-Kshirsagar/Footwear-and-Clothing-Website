@@ -21,7 +21,7 @@ body{
   justify-content:center;
   background:
     linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url("image/F1 back.jpg") center/cover no-repeat;
+    url("image/F1-back.jpg") center/cover no-repeat;
 }
 
 /* SIGNUP BOX */
@@ -154,7 +154,7 @@ async function signup(e) {
   const userData = { name, email, password };
 
   try {
-    const response = await fetch('/api/signup', {
+    const response = await fetch('/api/Signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
