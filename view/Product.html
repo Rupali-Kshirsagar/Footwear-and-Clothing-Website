@@ -210,7 +210,7 @@ async function addToCart() {
   }
 
   try {
-    const response = await fetch("http://localhost:8080/api/cart", {
+    const response = await fetch("http://localhost:8080/api/Cart", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
