@@ -329,14 +329,14 @@ header h1{
 function openProduct(name, desc, price, type, image) {
   // 1. Clean the price (removes "Rs" and commas)
   const cleanPrice = price.toString().replace(/[^\d.]/g, ''); 
-  
-  // 2. IMPORTANT: Changed 'product.html' to 'Product.html' to match your filename
-  // Also added a leading slash to the image path if it's missing
   const formattedImage = image.startsWith('http') ? image : '/' + image;
 
   const url = `Product.html?name=${encodeURIComponent(name)}&desc=${encodeURIComponent(desc)}&price=${cleanPrice}&type=${encodeURIComponent(type)}&image=${encodeURIComponent(image)}`;
   
   window.location.href = url;
+}
+function buyNow(product){
+  window.location.href = "Summary.html";
 }
 </script>
 
