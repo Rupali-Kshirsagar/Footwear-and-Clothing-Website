@@ -337,7 +337,6 @@ async function placeOrder(){
   const pincode = document.getElementById("pincode").value;
   const phone = document.getElementById("phone").value;
 
-  // VALIDATION
   if(!name || !state || !city || !address || !pincode || !phone){
     alert("Please fill all delivery details");
     return;
@@ -345,7 +344,7 @@ async function placeOrder(){
 
   try{
 
-    const response = await fetch("http://localhost:8080/api/order", {
+    const response = await fetch("/api/order", {   // ✅ FIXED
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -367,7 +366,6 @@ async function placeOrder(){
 
     if(response.ok){
 
-      // SAVE FOR CONFIRMATION PAGE
       localStorage.setItem("lastOrderId", data.orderId);
       localStorage.setItem("confirmedOrderItems", JSON.stringify(itemsToDisplay));
       localStorage.setItem("deliveryAddress", JSON.stringify({
@@ -375,12 +373,9 @@ async function placeOrder(){
         phone
       }));
 
-      // CLEAR CART
       localStorage.removeItem("cart_" + email);
 
       alert("Order Placed Successfully!");
-
-      // REDIRECT
       window.location.href = "confirmation.html";
 
     } else {
@@ -391,7 +386,6 @@ async function placeOrder(){
     console.error(err);
     alert("Server error");
   }
-
 }
 
 </script>
