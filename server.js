@@ -35,6 +35,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'view', 'index.html'));
 });
 
+app.get('/product.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'view', 'product.html'));
+});
+
 // ================== SIGNUP ==================
 app.post('/api/signup', async (req, res) => {
   try {
