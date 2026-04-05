@@ -35,12 +35,12 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'view', 'index.html'));
 });
 
-app.get('/product.html', (req, res) => {
+app.get('/Product.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'view', 'Product.html'));
 });
 
 // ================== SIGNUP ==================
-app.post('/api/signup', async (req, res) => {
+app.post('/api/Signup', async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
@@ -63,7 +63,7 @@ app.post('/api/signup', async (req, res) => {
 });
 
 // ================== LOGIN ==================
-app.post('/api/login', async (req, res) => {
+app.post('/api/Login', async (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -92,7 +92,7 @@ app.post('/api/login', async (req, res) => {
 
 // ================== CART ==================
 // ADD TO CART
-app.post('/api/cart', async (req, res) => {
+app.post('/api/Cart', async (req, res) => {
   try {
     const { userEmail, name, price, image, size, quantity } = req.body;
 
@@ -115,7 +115,7 @@ app.post('/api/cart', async (req, res) => {
   }
 });
 // GET
-app.get('/api/cart/:email', async (req, res) => {
+app.get('/api/Cart/:email', async (req, res) => {
   const items = await Cart.find({
     userEmail: req.params.email.toLowerCase()
   });
@@ -123,13 +123,13 @@ app.get('/api/cart/:email', async (req, res) => {
 });
 
 // DELETE
-app.delete('/api/cart/:id', async (req, res) => {
+app.delete('/api/Cart/:id', async (req, res) => {
   await Cart.deleteOne({ _id: req.params.id });
   res.json({ success: true });
 });
 
 // UPDATE
-app.put('/api/cart/:id', async (req, res) => {
+app.put('/api/Cart/:id', async (req, res) => {
   await Cart.updateOne(
     { _id: req.params.id },
     { $set: { quantity: req.body.quantity } }
@@ -260,7 +260,7 @@ app.put('/api/order/status/:id', async (req, res) => {
 });
 
 // ================== CONTACT ==================
-app.post('/api/contact', async (req, res) => {
+app.post('/api/Contact', async (req, res) => {
   try {
     console.log("Contact data received:", req.body); // DEBUG
 
