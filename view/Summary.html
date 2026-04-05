@@ -344,7 +344,7 @@ async function placeOrder(){
 
   try{
 
-    const response = await fetch("/api/Order", {   // ✅ FIXED
+    const response = await fetch("https://footwear-and-clothing-website-production.up.railway.app/api/Order", {  // ✅ FIXED
       method: "POST",
       headers: {
         "Content-Type": "application/json"
