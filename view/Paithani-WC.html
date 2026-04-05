@@ -170,6 +170,7 @@ onclick="openProduct('Paithani Silk Saree','Elora Green Womens Soft Paithani Sil
 </div>
 
 <script>
+/* SAME FUNCTION AS HOME PAGE */
 function openProduct(name, desc, price, type, image){
   const url =
     "Product.html" +
@@ -179,6 +180,9 @@ function openProduct(name, desc, price, type, image){
     "&type="  + type +
     "&image=" + image;
 
+  window.location.href = url;
+}
+function buyNow(product){
   window.location.href = "Summary.html";
 }
 </script>
