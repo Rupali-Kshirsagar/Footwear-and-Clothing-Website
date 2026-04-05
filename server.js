@@ -139,7 +139,7 @@ app.put('/api/Cart/:id', async (req, res) => {
 
 
 // ================== PLACE ORDER ==================
-app.post('/api/order', async (req, res) => {
+app.post('/api/Order', async (req, res) => {
   try {
     const {
       userEmail,
@@ -187,7 +187,7 @@ app.post('/api/order', async (req, res) => {
     res.status(500).json({ error: "Order failed" });
   }
 });
-app.delete('/api/order/:id', async (req, res) => {
+app.delete('/api/Order/:id', async (req, res) => {
   try {
 
     const deleted = await Order.findOneAndDelete({
@@ -235,7 +235,7 @@ app.delete('/api/orders/:email', async (req, res) => {
   }
 });
 // ================== UPDATE ORDER STATUS ==================
-app.put('/api/order/status/:id', async (req, res) => {
+app.put('/api/Order/status/:id', async (req, res) => {
   try {
 
     const order = await Order.findOne({ orderId: req.params.id });
