@@ -170,6 +170,7 @@ onclick="openProduct('Grey Designer Saree','Stylish Grey Saree with Subtle Motif
 </div>
 
 <script>
+/* SAME FUNCTION AS HOME PAGE */
 function openProduct(name, desc, price, type, image){
   const url =
     "Product.html" +
@@ -179,6 +180,9 @@ function openProduct(name, desc, price, type, image){
     "&type="  + type +
     "&image=" + image;
 
+  window.location.href = url;
+}
+function buyNow(product){
   window.location.href = "Summary.html";
 }
 </script>
