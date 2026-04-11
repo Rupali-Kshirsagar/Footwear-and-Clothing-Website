@@ -116,9 +116,12 @@ app.post('/api/Cart', async (req, res) => {
 });
 // GET
 app.get('/api/Cart/:email', async (req, res) => {
-  const items = await Cart.find({
   const email = (req.params.email || "").toLowerCase();
+
+  const items = await Cart.find({
+    userEmail: email
   });
+
   res.json(items);
 });
 
@@ -211,13 +214,16 @@ app.delete('/api/Order/:id', async (req, res) => {
 // GET ORDERS
 app.get("/api/orders/:email", async (req, res) => {
   try{
+    const email = (req.params.email || "").toLowerCase();
+
     const orders = await Order.find({
-      const email = (req.params.email || "").toLowerCase();
+      userEmail: email
     }).sort({ createdAt: -1 });
 
     res.json(orders);
+
   }catch(err){
-    console.error(err); 
+    console.error(err);
     res.status(500).json({ error: "Server error" });
   }
 });
@@ -225,8 +231,10 @@ app.get("/api/orders/:email", async (req, res) => {
 // DELETE ALL ORDERS
 app.delete('/api/orders/:email', async (req, res) => {
   try {
+    const email = (req.params.email || "").toLowerCase();
+
     await Order.deleteMany({
-      const email = (req.params.email || "").toLowerCase();
+      userEmail: email
     });
 
     res.json({ message: "All orders deleted" });
