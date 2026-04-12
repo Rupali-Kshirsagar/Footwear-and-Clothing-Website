@@ -210,23 +210,25 @@ async function addToCart() {
   }
 
   try {
-    const response = await fetch("https://footwear-and-clothing-website-production.up.railway.app/api/Cart", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        userEmail: email,
-        name: name,
-        price: parseFloat(price),
-        image: image,
-        size: selectedSize,   // ✅ null for saree
-        quantity: 1
-      })
-    });
+    const response = await fetch("/api/Cart", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    userEmail: email,
+    name: name,
+    price: parseFloat(price),
+    image: image,
+    size: selectedSize || "N/A",
+    quantity: 1
+  })
+});
+
+const data = await response.json();
 
     if (response.ok) {
-      alert("Added to cart");
+      alert("Added to cart ✅");
     } else {
-      alert("Error adding to cart");
+      alert(data.error || "Error adding to cart");
     }
 
   } catch (err) {
