@@ -88,18 +88,32 @@ document.getElementById("orderId").innerText =
   orderId ? orderId : "Order Not Found";
 
 
-  // ADDRESS
- const address = JSON.parse(localStorage.getItem("deliveryAddress") || "{}");
+ // ================= ADDRESS (FIXED SAFE VERSION) =================
+  let address = null;
 
-if (address && address.name) {
-  document.getElementById("deliveryAddress").innerHTML = `
-    <strong>${address.name}</strong><br>
-    Phone: ${address.phone}<br>
-    Status: Payment Verified
-  `;
-} else {
-  document.getElementById("deliveryAddress").innerHTML = "No address found";
-}
+  try {
+    address = JSON.parse(localStorage.getItem("deliveryAddress"));
+  } catch (e) {
+    address = null;
+  }
+
+  const addressBox = document.getElementById("deliveryAddress");
+
+  if (address && address.name) {
+    addressBox.innerHTML = `
+      <strong>${address.name}</strong><br>
+      Phone: ${address.phone || 'N/A'}<br>
+      Address: ${address.address || 'N/A'}<br>
+      City: ${address.city || 'N/A'}<br>
+      Status: Payment Verified
+    `;
+  } else {
+    addressBox.innerHTML = `
+      <p style="color:red;">
+        ⚠ No address found. Please complete checkout properly.
+      </p>
+    `;
+  }
   // ITEMS
   const items = JSON.parse(localStorage.getItem("confirmedOrderItems")) || [];
   const itemsDiv = document.getElementById("orderItems");
