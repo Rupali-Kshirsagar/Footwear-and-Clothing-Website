@@ -92,6 +92,11 @@ app.post('/api/Cart', async (req, res) => {
   try {
     const { userEmail, name, price, image, size, quantity } = req.body;
 
+    // ✅ VALIDATION (VERY IMPORTANT)
+    if (!userEmail || !name || !price || !image || !size || !quantity) {
+      return res.status(400).json({ error: "All fields required" });
+    }
+
     const newItem = new Cart({
       userEmail: userEmail.toLowerCase(),
       name,
@@ -106,6 +111,7 @@ app.post('/api/Cart', async (req, res) => {
     res.json({ success: true });
 
   } catch (err) {
+    console.error("Cart Error:", err);   // 🔥 SEE ERROR IN LOGS
     res.status(500).json({ error: "Failed to add cart" });
   }
 });
