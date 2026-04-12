@@ -16,19 +16,15 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'view')));
 
-// ================== DB CONNECT ==================
-mongoose.connect(process.env.MONGO_URI)
-.then(() => {
-  console.log("✅ MongoDB connected");
-
+// ================== START SERVER FIRST (IMPORTANT) ==================
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
-})
-.catch(err => {
-  console.error("❌ MongoDB connection failed:", err);
-  process.exit(1); // 🔥 crash properly so Railway shows logs
-});
+
+// ================== DB CONNECT ==================
+mongoose.connect(process.env.MONGO_URI)
+.then(() => console.log("✅ MongoDB connected"))
+.catch(err => console.error("❌ MongoDB error:", err));
 
 // ================== ROUTES ==================
 app.get('/', (req, res) => {
