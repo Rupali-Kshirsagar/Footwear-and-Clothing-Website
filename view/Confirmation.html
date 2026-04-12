@@ -84,26 +84,26 @@ window.onload = function() {
   // ORDER ID
   const orderId = localStorage.getItem("lastOrderId");
 
-  document.getElementById("orderId").innerText =
-    orderId && orderId !== "undefined" ? orderId : "Order Not Found";
+document.getElementById("orderId").innerText =
+  orderId ? orderId : "Order Not Found";
 
 
   // ADDRESS
-  const address = JSON.parse(localStorage.getItem("deliveryAddress"));
+ const address = JSON.parse(localStorage.getItem("deliveryAddress") || "{}");
 
-  if (address) {
-    document.getElementById("deliveryAddress").innerHTML = `
-      <strong>${address.name}</strong><br>
-      Phone: ${address.phone}<br>
-      Status: Payment Verified
-    `;
-  }
-
-
+if (address && address.name) {
+  document.getElementById("deliveryAddress").innerHTML = `
+    <strong>${address.name}</strong><br>
+    Phone: ${address.phone}<br>
+    Status: Payment Verified
+  `;
+} else {
+  document.getElementById("deliveryAddress").innerHTML = "No address found";
+}
   // ITEMS
   const items = JSON.parse(localStorage.getItem("confirmedOrderItems")) || [];
   const itemsDiv = document.getElementById("orderItems");
-
+   itemsDiv.innerHTML = ""; // ✅ PREVENT DUPLICATES
   let total = 0;
 
   if (items.length > 0) {
