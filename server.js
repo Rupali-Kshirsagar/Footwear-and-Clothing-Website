@@ -1,19 +1,20 @@
 const express = require('express');
 const app = express();
 
-const PORT = process.env.PORT || 8080;
+// 🔥 IMPORTANT
+const PORT = process.env.PORT;
 
-// ✅ Healthcheck (MOST IMPORTANT)
+// TEST ROUTE
 app.get('/check', (req, res) => {
   res.status(200).send("OK");
 });
 
-// ✅ Basic route
+// ROOT
 app.get('/', (req, res) => {
   res.send("Server working ✅");
 });
 
-// ✅ Start server
+// START SERVER
 app.listen(PORT, '0.0.0.0', () => {
-  console.log("Server running on port " + PORT);
+  console.log("🚀 Server started on port:", PORT);
 });
