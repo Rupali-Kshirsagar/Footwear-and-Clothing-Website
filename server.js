@@ -34,6 +34,9 @@ mongoose.connect(process.env.MONGO_URI)
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'view', 'index.html'));
 });
+app.get('/check', (req, res) => {
+  res.send("Server OK ✅");
+});
 
 app.get('/Product.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'view', 'Product.html'));
