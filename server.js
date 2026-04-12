@@ -41,6 +41,10 @@ app.get('/check', (req, res) => {
 app.get('/Product.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'view', 'Product.html'));
 });
+// 🔥 MUST BE LAST ROUTE
+app.get('*', (req, res) => {
+  res.send("App is running");
+});
 
 // ================== SIGNUP ==================
 app.post('/api/Signup', async (req, res) => {
