@@ -147,8 +147,8 @@ console.log(result);   // 👈 ADD THIS LINE
     if(response.ok){
 
       // ✅ STORE USER DATA PROPERLY
-      localStorage.setItem("userEmail", result.email);
-      localStorage.setItem("username", result.name);
+     localStorage.setItem("userEmail", result.email || result.user?.email);
+localStorage.setItem("username", result.name || result.user?.name);
 
       alert("Login successful ✅");
 
