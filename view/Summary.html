@@ -330,32 +330,34 @@ document.getElementById("deliveryDate").innerText = date.toDateString();
 // 🔥 PLACE ORDER (FIXED)
 function placeOrder() {
 
-  const deliveryAddress = {
-    name: document.getElementById("name").value.trim(),
-    phone: document.getElementById("phone").value.trim(),
-    address: document.getElementById("address").value.trim(),
-    city: document.getElementById("city").value.trim(),
-    state: document.getElementById("state").value.trim(),
-    pincode: document.getElementById("pincode").value.trim()
-  };
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const address = document.getElementById("address").value.trim();
+  const city = document.getElementById("city").value.trim();
+  const state = document.getElementById("state").value.trim();
+  const pincode = document.getElementById("pincode").value.trim();
 
-  // ❗ VALIDATION ADDED (THIS WAS MISSING)
-  if (
-    !deliveryAddress.name ||
-    !deliveryAddress.phone ||
-    !deliveryAddress.address
-  ) {
-    alert("Please fill all required fields");
+  // ❗ VALIDATION (IMPORTANT)
+  if (!name || !phone || !address || !city || !state || !pincode) {
+    alert("Please fill all delivery details");
     return;
   }
+
+  const deliveryAddress = {
+    name,
+    phone,
+    address,
+    city,
+    state,
+    pincode
+  };
+
+  console.log("Saving address:", deliveryAddress);
 
   localStorage.setItem("deliveryAddress", JSON.stringify(deliveryAddress));
 
   const orderId = "ORD" + Date.now();
   localStorage.setItem("lastOrderId", orderId);
-
-  // DEBUG (VERY IMPORTANT)
-  console.log("Saved Address:", deliveryAddress);
 
   window.location.href = "confirmation.html";
 }
