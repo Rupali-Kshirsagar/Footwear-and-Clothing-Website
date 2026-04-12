@@ -18,9 +18,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'view')));
 
 // ================== HEALTH CHECK ==================
-app.get('/check', (req, res) => {
-  res.status(200).send("OK");
-});
+//app.get('/check', (req, res) => {
+ // res.status(200).send("OK");
+//});
 
 // ================== BASIC ROUTES ==================
 app.get('/', (req, res) => {
@@ -117,25 +117,35 @@ app.post('/api/Cart', async (req, res) => {
 });
 
 app.get('/api/Cart/:email', async (req, res) => {
-  const email = (req.params.email || "").toLowerCase();
-
-  const items = await Cart.find({ userEmail: email });
-  res.json(items);
+  try {
+    const email = (req.params.email || "").toLowerCase();
+    const items = await Cart.find({ userEmail: email });
+    res.json(items);
+  } catch (err) {
+    res.status(500).json({ error: "Cart fetch failed" });
+  }
 });
 
 app.delete('/api/Cart/:id', async (req, res) => {
-  await Cart.deleteOne({ _id: req.params.id });
-  res.json({ success: true });
+  try {
+    await Cart.deleteOne({ _id: req.params.id });
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: "Delete failed" });
+  }
 });
 
 app.put('/api/Cart/:id', async (req, res) => {
-  await Cart.updateOne(
-    { _id: req.params.id },
-    { $set: { quantity: req.body.quantity } }
-  );
-  res.json({ success: true });
+  try {
+    await Cart.updateOne(
+      { _id: req.params.id },
+      { $set: { quantity: req.body.quantity } }
+    );
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: "Update failed" });
+  }
 });
-
 // ================== ORDER ==================
 app.post('/api/Order', async (req, res) => {
   try {
@@ -264,22 +274,27 @@ app.post('/api/Contact', async (req, res) => {
 
 // ================== AUTO STATUS UPDATE ==================
 setInterval(async () => {
-  if (mongoose.connection.readyState !== 1) return;
+  try {
 
-  const orders = await Order.find();
+    if (mongoose.connection.readyState !== 1) return;
 
-  for (let order of orders) {
-    const createdDate = new Date(order.createdAt);
-    const today = new Date();
+    const orders = await Order.find();
 
-    const diffDays = Math.floor((today - createdDate) / (1000 * 60 * 60 * 24));
+    for (let order of orders) {
+      const createdDate = new Date(order.createdAt);
+      const today = new Date();
 
-    if (diffDays === 0) order.status = "Placed";
-    else if (diffDays === 1) order.status = "Shipped";
-    else if (diffDays === 2) order.status = "Out for Delivery";
-    else if (diffDays >= 3) order.status = "Delivered";
+      const diffDays = Math.floor((today - createdDate) / (1000 * 60 * 60 * 24));
 
-    await order.save();
+      if (diffDays === 0) order.status = "Placed";
+      else if (diffDays === 1) order.status = "Shipped";
+      else if (diffDays === 2) order.status = "Out for Delivery";
+      else order.status = "Delivered";
+
+      await order.save();
+    }
+
+  } catch (err) {
+    console.error("Auto status error:", err);
   }
-
 }, 60000);
