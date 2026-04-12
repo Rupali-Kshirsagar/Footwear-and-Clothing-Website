@@ -330,26 +330,35 @@ document.getElementById("deliveryDate").innerText = date.toDateString();
 // 🔥 PLACE ORDER (FIXED)
 function placeOrder() {
 
-  // STEP 1: SAVE ADDRESS
   const deliveryAddress = {
-    name: document.getElementById("name").value,
-    phone: document.getElementById("phone").value,
-    address: document.getElementById("address").value,
-    city: document.getElementById("city").value,
-    state: document.getElementById("state").value,
-    pincode: document.getElementById("pincode").value
+    name: document.getElementById("name").value.trim(),
+    phone: document.getElementById("phone").value.trim(),
+    address: document.getElementById("address").value.trim(),
+    city: document.getElementById("city").value.trim(),
+    state: document.getElementById("state").value.trim(),
+    pincode: document.getElementById("pincode").value.trim()
   };
+
+  // ❗ VALIDATION ADDED (THIS WAS MISSING)
+  if (
+    !deliveryAddress.name ||
+    !deliveryAddress.phone ||
+    !deliveryAddress.address
+  ) {
+    alert("Please fill all required fields");
+    return;
+  }
 
   localStorage.setItem("deliveryAddress", JSON.stringify(deliveryAddress));
 
-  // STEP 2: SAVE ORDER ID (IMPORTANT)
   const orderId = "ORD" + Date.now();
   localStorage.setItem("lastOrderId", orderId);
 
-  // STEP 3: REDIRECT
+  // DEBUG (VERY IMPORTANT)
+  console.log("Saved Address:", deliveryAddress);
+
   window.location.href = "confirmation.html";
 }
-
 </script>
 </body>
 </html>
