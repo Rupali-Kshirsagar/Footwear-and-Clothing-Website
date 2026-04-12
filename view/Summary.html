@@ -344,7 +344,7 @@ async function placeOrder(){
 
   try{
 
-    const response = await fetch("https://footwear-and-clothing-website-production.up.railway.app/api/Order", {  // ✅ FIXED
+    const response = await fetch("/api/Order", {   // ✅ FIXED
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -363,17 +363,12 @@ async function placeOrder(){
     });
 
     const data = await response.json();
+    console.log(data); // ✅ debug
 
     if(response.ok){
 
       localStorage.setItem("lastOrderId", data.orderId);
       localStorage.setItem("confirmedOrderItems", JSON.stringify(itemsToDisplay));
-      localStorage.setItem("deliveryAddress", JSON.stringify({
-        name,
-        phone
-      }));
-
-      localStorage.removeItem("cart_" + email);
 
       alert("Order Placed Successfully!");
       window.location.href = "Confirmation.html";
