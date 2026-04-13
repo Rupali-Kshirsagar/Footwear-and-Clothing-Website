@@ -30,6 +30,9 @@ app.get('/', (req, res) => {
 app.get('/Product.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'view', 'Product.html'));
 });
+app.get('/confirmation.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'view', 'confirmation.html'));
+});
 
 // ================== START SERVER FIRST ==================
 app.listen(PORT, '0.0.0.0', () => {
@@ -298,3 +301,7 @@ setInterval(async () => {
     console.error("Auto status error:", err);
   }
 }, 60000);
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'view', 'index.html'));
+});
