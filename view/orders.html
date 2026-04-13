@@ -112,12 +112,12 @@ async function loadOrders(){
   const container = document.getElementById("ordersContainer");
 
   try{
-    const response = await fetch(`${API_BASE}/api/orders/${email}`);
+    const response = await fetch(`${API_BASE}/api/orders/${encodeURIComponent(email)}`);
 
-    if(!response.ok){
-      throw new Error("API Error");
-    }
-
+   if(!response.ok){
+  const text = await response.text();
+  throw new Error(text);
+}
     const orders = await response.json();
 
     if(!orders || orders.length === 0){
