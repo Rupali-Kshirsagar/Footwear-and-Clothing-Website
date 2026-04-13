@@ -90,6 +90,13 @@ h2{
   });
 
 }
+  function formatDate(date) {
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0'); // 👈 FIX (0–11 → 1–12)
+  const year = date.getFullYear();
+
+  return `${day}-${month}-${year}`;
+}
 
 // 🔷 LOAD ORDERS FROM BACKEND
 function loadOrders(){
@@ -128,8 +135,8 @@ container.innerHTML += `
     <p>Status: <b>${order.status}</b></p>
     <p>Payment: ${order.payment}</p>
 
-    <p>Order Date: ${created.toLocaleDateString()}</p>
-    <p>Expected Delivery: ${delivery.toLocaleDateString()}</p>
+    <p>Order Date: ${formatDate(created)}</p>
+    <p>Expected Delivery: ${formatDate(delivery)}</p>
 
     <div class="timeline">
       ${timelineStep(order.status, "Placed")}
